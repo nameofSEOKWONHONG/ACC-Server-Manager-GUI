@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0660" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="3.2.0" />
+    <PackageReference Include="MahApps.Metro.SimpleChildWindow" Version="2.0.0-alpha0032" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ACCCServerApp.Shard\ACCCServerApp.Shard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resource\ko-KR.json">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ko-KR.cs</LastGenOutput>
+    </None>
+    <None Update="Resource\Lang\en-US.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resource\Lang\ko-KR.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resource\ko-KR.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ko-KR.json</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

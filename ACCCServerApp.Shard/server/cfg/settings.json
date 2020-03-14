@@ -1,0 +1,11 @@
+{
+    "serverName": "ACC Server (please edit settings.json)",
+    "adminPassword": "",
+    "trackMedalsRequirement": -1,
+    "safetyRatingRequirement": -1,
+    "racecraftRatingRequirement": -1,
+    "password": "",
+    "maxCarSlots": 30,
+    "spectatorPassword": "",
+    "configVersion": 1
+}

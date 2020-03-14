@@ -1,0 +1,68 @@
+﻿<Controls:MetroWindow x:Class="ACCCServerApp.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ACCCServerApp.Wpf"
+        xmlns:pages="clr-namespace:ACCCServerApp.Wpf.Pages"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
+        mc:Ignorable="d"
+
+        Title="MainWindow"
+        Height="600"
+        Width="800"
+
+        MinHeight="300"
+        MinWidth="300"
+
+        BorderThickness="0"
+        GlowBrush="Black"
+        ResizeMode="CanResizeWithGrip"
+
+        WindowTransitionsEnabled="False"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+    </Window.Resources>
+    <Grid>
+        <Controls:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="0">
+            <TabItem Header="Main">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <pages:ACMainTop></pages:ACMainTop>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <pages:ACMainBottom></pages:ACMainBottom>
+                    </Grid>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Settings">
+                <Controls:MetroAnimatedTabControl x:Name="SettingsTabControl" Grid.Row="1">
+                    <TabItem Header="Configuration">
+                        <pages:ACConfiguration></pages:ACConfiguration>
+                    </TabItem>
+                    <TabItem Header="Event">
+                        <pages:ACEvent></pages:ACEvent>
+                    </TabItem>
+                    <TabItem Header="Settings">
+                        <pages:ACSettings></pages:ACSettings>
+                    </TabItem>
+                </Controls:MetroAnimatedTabControl>
+            </TabItem>
+        </Controls:MetroAnimatedSingleRowTabControl>
+        <StackPanel Margin="4"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <Controls:ProgressRing IsActive="{Binding IsChecked, Mode=TwoWay}"
+                                   IsLarge="True"
+                                   Visibility="{Binding IsChecked, Mode=TwoWay}"/>
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>
+
