@@ -48,7 +48,7 @@
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="UDP PORT"
-                     ToolTip="Check udp port"
+                     ToolTip="{Binding LanguageResource.CHK_UDP_PORT, Mode=OneTime}"
                      Style="{DynamicResource MahApps.Styles.TextBox.Button}"
                      x:Name="UDP" Text="{Binding Configuration.UdpPort, Mode=TwoWay}">
             </TextBox>
@@ -59,7 +59,7 @@
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                     Controls:TextBoxHelper.Watermark="TCP PORT"
                     SpellCheck.IsEnabled="True"
-                    ToolTip="Check tcp port"
+                    ToolTip="{Binding LanguageResource.CHK_TCP_PORT, Mode=OneTime}"
                     Style="{DynamicResource MahApps.Styles.TextBox.Button}"
                     x:Name="TCP" Text="{Binding Configuration.TcpPort, Mode=TwoWay}">
             </TextBox>
@@ -71,7 +71,7 @@
                              Controls:TextBoxHelper.Watermark="Max Connection"
                              Controls:TextBoxHelper.WatermarkAlignment="Left"
                              SpellCheck.IsEnabled="True"
-                             ToolTip="Max Connection"
+                             ToolTip="{Binding LanguageResource.MAX_CONNECTION, Mode=OneTime}"
                              x:Name="MAX_CONNECTION"
                              Text="{Binding Configuration.MaxConnection, Mode=TwoWay}">
             </TextBox>
@@ -83,7 +83,7 @@
                              Controls:TextBoxHelper.Watermark="Config Version"
                              Controls:TextBoxHelper.WatermarkAlignment="Left"
                              SpellCheck.IsEnabled="True"
-                             ToolTip="Config Version"
+                             ToolTip="{Binding LanguageResource.CONFIG_VERSION, Mode=OneTime}"
                              Text="{Binding Configuration.ConfigVersion, Mode=TwoWay}">
             </TextBox>
         </StackPanel>

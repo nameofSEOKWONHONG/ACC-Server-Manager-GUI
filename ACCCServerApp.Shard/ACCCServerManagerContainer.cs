@@ -9,6 +9,9 @@ using System.Text;
 
 namespace ACCCServerApp.Shard
 {
+    /// <summary>
+    /// ACCC Server Container (for create multiple server session)
+    /// </summary>
     public class ACCCServerManagerContainer
     {
         public static readonly Dictionary<string, IACCCServerManager> Containers = new Dictionary<string, IACCCServerManager>();

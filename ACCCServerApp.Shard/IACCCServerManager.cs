@@ -11,7 +11,5 @@ namespace ACCCServerApp.Shard
     {
         ACCCServerResult Start();
         ACCCServerResult Stop();
-
-
     }
 }

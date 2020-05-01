@@ -1,3 +1,15 @@
 ﻿{
-  "SERVER_START": "서버 시작"
+  "TITLE": "ACCC 서버 관리자 - GUI",
+  "MAIN": "메인",
+  "SETTINGS": "서버설정",
+  "SERVER_START": "서버 시작",
+
+  "CONFIGURATION": "네트워크 환경",
+  "EVENT": "레이스 이벤트",
+  "SETTING": "설정",
+
+  "CHK_UDP_PORT": "UDP 포트 체크",
+  "CHK_TCP_PORT": "TCP 포트 체크",
+  "MAX_CONNECTION": "최대 접속자 수",
+  "CONFIG_VERSION": "설정 버전"
 }

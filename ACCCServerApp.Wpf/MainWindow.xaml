@@ -6,10 +6,11 @@
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:res="clr-namespace:ACCCServerApp.Wpf.Language"
         d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
         mc:Ignorable="d"
 
-        Title="MainWindow"
+        Title="{Binding LanguageResource.TITLE, Mode=OneTime}"
         Height="600"
         Width="800"
 
@@ -27,7 +28,7 @@
     </Window.Resources>
     <Grid>
         <Controls:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="0">
-            <TabItem Header="Main">
+            <TabItem Header="{Binding LanguageResource.MAIN, Mode=OneTime}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
@@ -42,15 +43,15 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Settings">
+            <TabItem Header="{Binding LanguageResource.SETTINGS, Mode=OneTime}">
                 <Controls:MetroAnimatedTabControl x:Name="SettingsTabControl" Grid.Row="1">
-                    <TabItem Header="Configuration">
+                    <TabItem Header="{Binding LanguageResource.CONFIGURATION, Mode=OneTime}">
                         <pages:ACConfiguration></pages:ACConfiguration>
                     </TabItem>
-                    <TabItem Header="Event">
+                    <TabItem Header="{Binding LanguageResource.EVENT, Mode=OneTime}">
                         <pages:ACEvent></pages:ACEvent>
                     </TabItem>
-                    <TabItem Header="Settings">
+                    <TabItem Header="{Binding LanguageResource.SETTING, Mode=OneTime}">
                         <pages:ACSettings></pages:ACSettings>
                     </TabItem>
                 </Controls:MetroAnimatedTabControl>

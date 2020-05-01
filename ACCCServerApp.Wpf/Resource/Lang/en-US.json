@@ -1,3 +1,15 @@
 ﻿{
-  "SERVER_START": "SERVER START"
+  "TITLE": "ACCC SERVER MANAGER - GUI",
+  "MAIN": "MAIN",
+  "SETTINGS": "SETTINS",
+  "SERVER_START": "SERVER START",
+
+  "CONFIGURATION": "NETWORK CONFIGURATION",
+  "EVENT": "RACE EVENT",
+  "SETTING": "SETTING",
+
+  "CHK_UDP_PORT": "Check UDP Port",
+  "CHK_TCP_PORT": "Checl TCP Port",
+  "MAX_CONNECTION": "Maximum User Connection Count",
+  "CONFIG_VERSION":  "Config Version"
 }

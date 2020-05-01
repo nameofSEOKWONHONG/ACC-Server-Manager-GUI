@@ -22,11 +22,11 @@ namespace ACCCServerApp.Wpf
         {
             base.OnStartup(e);
 
-            var test = Language.LanguageHandler.Instance.LanguageResource.SERVER_START;
-            if(string.IsNullOrEmpty(test))
-            {
+            //var test = Language.LanguageHandler.Instance.LanguageResource.MAIN;
+            //if(string.IsNullOrEmpty(test))
+            //{
 
-            }
+            //}
         }
     }
 }

@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="xcopy &quot;E:\games-maker\steam\steamapps\common\Assetto Corsa Competizione\server\*.*&quot; &quot;$(ProjectDir)\server&quot; /K /D /H /Y" />
+    <Exec Command="xcopy &quot;C:\Program Files (x86)\Steam\steamapps\common\Assetto Corsa Competizione\server\*.*&quot; &quot;$(ProjectDir)\server&quot; /K /D /H /Y" />
   </Target>
 
 </Project>

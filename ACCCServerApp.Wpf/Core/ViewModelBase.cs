@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using ACCCServerApp.Wpf.Resource;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,8 @@ namespace ACCCServerApp.Wpf.Core
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        public LanguageResource LanguageResource { get; set; } = Language.LanguageHandler.Instance.LanguageResource;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected bool Set<T>(ref T field, T newValue = default(T), [CallerMemberName] string propertyName = null)

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ACCCServerApp.Shard
 {
+    /// <summary>
+    /// process manage for accc server process instance
+    /// </summary>
     public class ProcessHandler
     {
         private Process _executor = null;

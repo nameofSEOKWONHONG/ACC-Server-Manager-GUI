@@ -10,12 +10,17 @@ namespace ACCCServerApp.Shard
 {
     //accc server wiki : https://www.acc-wiki.info/wiki/Server_Configuration
 
-
-
+    /// <summary>
+    /// ACCC SERVER MANAGER CLASS
+    /// </summary>
     public class ACCCServerManager : IACCCServerManager
     {
         public ACCCServerConfig ACServerConfig { get; private set; }
         public string ServerName { get; set; }
+
+        /// <summary>
+        /// JSON FILE LIST
+        /// </summary>
         private Dictionary<string, string> _keyValues = new Dictionary<string, string>()
         {
             {"Configuration", "cfg/configuration.json" },
@@ -25,6 +30,7 @@ namespace ACCCServerApp.Shard
         };
         private ProcessHandler _processHandler;
 
+        #region [constructor]
         public ACCCServerManager(ACCCServerConfig aCCCServerConfig)
         {
             this.ACServerConfig = aCCCServerConfig;
@@ -54,7 +60,9 @@ namespace ACCCServerApp.Shard
 
             _processHandler = new ProcessHandler();
         }
+        #endregion
 
+        #region [Start & Stop]
         public ACCCServerResult Start()
         {
             var serverResult = new ACCCServerResult();
@@ -105,7 +113,9 @@ namespace ACCCServerApp.Shard
 
             return serverResult;
         }
+        #endregion
 
+        #region [Validator]
         public class ACCCServerManagerValidator : AbstractValidator<ACCCServerManager>
         {
             public ACCCServerManagerValidator()
@@ -126,5 +136,6 @@ namespace ACCCServerApp.Shard
                 return true;
             }
         }
+        #endregion
     }
 }

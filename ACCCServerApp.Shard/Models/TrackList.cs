@@ -4,10 +4,15 @@ using System.Text;
 
 namespace ACCCServerApp.Shard.Models
 {
-    public class TrackList
+    public partial class TrackList
     {
         public string Value { get; set; }
         public int UniquePitBoxes { get; set; }
         public int PrivateServerSlots { get; set; }
+    }
+
+    public partial class TrackList
+    {
+        public string ImageUrl { get; set; }
     }
 }
