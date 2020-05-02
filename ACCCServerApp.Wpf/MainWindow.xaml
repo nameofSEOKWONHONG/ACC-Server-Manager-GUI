@@ -10,7 +10,7 @@
         d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
         mc:Ignorable="d"
 
-        Title="{Binding LanguageResource.TITLE, Mode=OneTime}"
+        Title="{Binding LanguageResource.TITLE}"
         Height="600"
         Width="800"
 
@@ -26,9 +26,21 @@
     <Window.Resources>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
     </Window.Resources>
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="{Binding LanguageResource.LANGUAGE}" >
+                <Button.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="English" Click="LanguageClickEvent"/>
+                        <MenuItem Header="한국어" Click="LanguageClickEvent"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
     <Grid>
         <Controls:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="0">
-            <TabItem Header="{Binding LanguageResource.MAIN, Mode=OneTime}">
+            <TabItem Header="{Binding LanguageResource.MAIN}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
@@ -43,15 +55,15 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="{Binding LanguageResource.SETTINGS, Mode=OneTime}">
+            <TabItem Header="{Binding LanguageResource.SETTINGS}">
                 <Controls:MetroAnimatedTabControl x:Name="SettingsTabControl" Grid.Row="1">
-                    <TabItem Header="{Binding LanguageResource.CONFIGURATION, Mode=OneTime}">
+                    <TabItem Header="{Binding LanguageResource.CONFIGURATION}">
                         <pages:ACConfiguration></pages:ACConfiguration>
                     </TabItem>
-                    <TabItem Header="{Binding LanguageResource.EVENT, Mode=OneTime}">
+                    <TabItem Header="{Binding LanguageResource.EVENT}">
                         <pages:ACEvent></pages:ACEvent>
                     </TabItem>
-                    <TabItem Header="{Binding LanguageResource.SETTING, Mode=OneTime}">
+                    <TabItem Header="{Binding LanguageResource.SETTING}">
                         <pages:ACSettings></pages:ACSettings>
                     </TabItem>
                 </Controls:MetroAnimatedTabControl>

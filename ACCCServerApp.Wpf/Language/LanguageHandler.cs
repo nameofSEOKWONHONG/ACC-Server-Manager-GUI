@@ -23,20 +23,39 @@ namespace ACCCServerApp.Wpf.Language
             }
         }
 
-        private LanguageResource _languageResource = null;
+        private Dictionary<string, LanguageResource> _languageResources = new Dictionary<string, LanguageResource>();
+
+        private LanguageResource _languageResource;
+
         public LanguageResource LanguageResource {
             get
             {
                 if(this._languageResource == null)
                 {
-                    InitLanguageResource(Thread.CurrentThread.CurrentCulture.Name);
+                    this._languageResource = _languageResources[Thread.CurrentThread.CurrentCulture.Name];
                 }
 
                 return this._languageResource;
             }
         }
 
-        private LanguageHandler() { }
+        public LanguageResource this[string lang]
+        {
+            get
+            {
+                this._languageResource = _languageResources[lang];
+                return this._languageResource;
+            }
+        }
+
+
+        private LanguageHandler() {
+            if (_languageResources.Count <= 0)
+            {
+                _languageResources.Add("en-US", LoadLanguageSetting("en-US"));
+                _languageResources.Add("ko-KR", LoadLanguageSetting("ko-KR"));
+            }
+        }
 
         private Dictionary<string, string> _keyValues = new Dictionary<string, string>
         {
@@ -44,10 +63,11 @@ namespace ACCCServerApp.Wpf.Language
             {"en-US",  "./Resource/Lang/en-US.json"}
         };
 
-        private void InitLanguageResource(string language)
+        private LanguageResource LoadLanguageSetting(string language)
         {
             var resourceJson = string.Empty;
             var keyValue = _keyValues.Where(m => m.Key == language).FirstOrDefault();
+            LanguageResource langRes = null;
 
             if(string.IsNullOrEmpty(keyValue.Key))
             {
@@ -58,7 +78,7 @@ namespace ACCCServerApp.Wpf.Language
             {
                 resourceJson = File.ReadAllText(keyValue.Value);
 
-                _languageResource = JsonConvert.DeserializeObject<LanguageResource>(resourceJson);
+                langRes = JsonConvert.DeserializeObject<LanguageResource>(resourceJson);
 
                 NumberFormatInfo numberFormatInfo = CultureInfo.CreateSpecificCulture(language).NumberFormat;
                 CultureInfo cultureInfo = new CultureInfo(language);
@@ -82,6 +102,8 @@ namespace ACCCServerApp.Wpf.Language
             {
                 throw;
             }
+
+            return langRes;
         }
     }
 }

@@ -35,6 +35,11 @@ namespace ACCCServerApp.Wpf
             return _viewModels.Where(m => m.GetType() == typeof(TViewModel)).First() as TViewModel;
         }
 
+        public IEnumerable<ViewModelBase> GetInstances()
+        {
+            return _viewModels;
+        }
+
         private ViewModelContainer()
         {
 

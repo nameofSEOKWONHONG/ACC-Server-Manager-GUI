@@ -3,10 +3,107 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:ACCCServerApp.Wpf.Pages"
+        d:DataContext="{d:DesignInstance local:ACSettingsViewModel}"
         mc:Ignorable="d"
         Height="450" Width="800">
-    <Grid>
+    <UserControl.Resources>
+        <Thickness x:Key="ControlMargin">0 5 0 0</Thickness>
 
+        <ObjectDataProvider x:Key="NumericInputValues"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type Controls:NumericInput}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Controls:NumericInput" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="TextAlignmentValues"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type TextAlignment}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="TextAlignment" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="ButtonsAlignmentValues"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type Controls:ButtonsAlignment}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Controls:ButtonsAlignment" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SERVER_NAME, Mode=OneWay}"
+                     ToolTip="{Binding LanguageResource.SERVER_NAME_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.ADMIN_PASS}"
+                     ToolTip="{Binding LanguageResource.ADMIN_PASS_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.TRACKMEDALS_REQUIREMENT}"
+                     ToolTip="{Binding LanguageResource.TRACKMEDALS_REQUIREMENT_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SAFETYRATING_REQUIREMENT}"
+                     ToolTip="{Binding LanguageResource.SAFETYRATING_REQUIREMENT_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.RACECRAFTRATING_REQUIREMENT}"
+                     ToolTip="{Binding LanguageResource.RACECRAFTRATING_REQUIREMENT_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.PASSWORD}"
+                     ToolTip="{Binding LanguageResource.PASSWORD_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SPECTATOR_PASSWORD}"
+                     ToolTip="{Binding LanguageResource.SPECTATOR_PASSWORD_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </StackPanel>
     </Grid>
 </UserControl>

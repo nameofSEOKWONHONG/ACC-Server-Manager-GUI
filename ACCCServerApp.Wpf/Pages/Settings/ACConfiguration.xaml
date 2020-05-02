@@ -44,11 +44,11 @@
         <StackPanel>
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="UDP PORT"
-                     ToolTip="{Binding LanguageResource.CHK_UDP_PORT, Mode=OneTime}"
+                     ToolTip="{Binding LanguageResource.CHK_UDP_PORT}"
                      Style="{DynamicResource MahApps.Styles.TextBox.Button}"
                      x:Name="UDP" Text="{Binding Configuration.UdpPort, Mode=TwoWay}">
             </TextBox>
@@ -59,7 +59,7 @@
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                     Controls:TextBoxHelper.Watermark="TCP PORT"
                     SpellCheck.IsEnabled="True"
-                    ToolTip="{Binding LanguageResource.CHK_TCP_PORT, Mode=OneTime}"
+                    ToolTip="{Binding LanguageResource.CHK_TCP_PORT}"
                     Style="{DynamicResource MahApps.Styles.TextBox.Button}"
                     x:Name="TCP" Text="{Binding Configuration.TcpPort, Mode=TwoWay}">
             </TextBox>
@@ -71,7 +71,7 @@
                              Controls:TextBoxHelper.Watermark="Max Connection"
                              Controls:TextBoxHelper.WatermarkAlignment="Left"
                              SpellCheck.IsEnabled="True"
-                             ToolTip="{Binding LanguageResource.MAX_CONNECTION, Mode=OneTime}"
+                             ToolTip="{Binding LanguageResource.MAX_CONNECTION}"
                              x:Name="MAX_CONNECTION"
                              Text="{Binding Configuration.MaxConnection, Mode=TwoWay}">
             </TextBox>
@@ -83,7 +83,7 @@
                              Controls:TextBoxHelper.Watermark="Config Version"
                              Controls:TextBoxHelper.WatermarkAlignment="Left"
                              SpellCheck.IsEnabled="True"
-                             ToolTip="{Binding LanguageResource.CONFIG_VERSION, Mode=OneTime}"
+                             ToolTip="{Binding LanguageResource.CONFIG_VERSION}"
                              Text="{Binding Configuration.ConfigVersion, Mode=TwoWay}">
             </TextBox>
         </StackPanel>

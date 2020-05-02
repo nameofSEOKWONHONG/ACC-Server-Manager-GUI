@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using ACCCServerApp.Wpf.Language;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,37 @@ namespace ACCCServerApp.Wpf
             DataContext = _viewModel;
 
             InitializeComponent();
+
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void LanguageClickEvent(object sender, RoutedEventArgs e)
+        {
+            MenuItem menuItem = sender as MenuItem;
+            if(menuItem != null)
+            {
+                var header = menuItem.Header;
+
+                if(header.ToString() == "English")
+                {
+                    foreach(var viewmodel in ViewModelContainer.Instance.GetInstances())
+                    {
+                        viewmodel.LanguageResource = LanguageHandler.Instance["en-US"];
+                    }
+                }
+                else
+                {
+                    foreach (var viewmodel in ViewModelContainer.Instance.GetInstances())
+                    {
+                        viewmodel.LanguageResource = LanguageHandler.Instance["ko-KR"];
+                    }
+                }
+            }
         }
     }
 }

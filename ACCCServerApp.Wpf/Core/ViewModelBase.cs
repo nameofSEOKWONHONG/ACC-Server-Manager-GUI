@@ -1,4 +1,5 @@
-﻿using ACCCServerApp.Wpf.Resource;
+﻿using ACCCServerApp.Wpf.Language;
+using ACCCServerApp.Wpf.Resource;
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,18 @@ namespace ACCCServerApp.Wpf.Core
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        public LanguageResource LanguageResource { get; set; } = Language.LanguageHandler.Instance.LanguageResource;
+        private LanguageResource _languageResource = LanguageHandler.Instance["ko-KR"];
+        public LanguageResource LanguageResource { 
+            get
+            {
+                return _languageResource;
+            }
+            set 
+            {
+                _languageResource = value;
+                OnPropertyChanged("LanguageResource");
+            } 
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

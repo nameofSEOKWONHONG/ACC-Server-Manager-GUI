@@ -7,6 +7,7 @@ namespace ACCCServerApp.Wpf.Resource
     public class LanguageResource
     {
         public string TITLE { get; set; }
+        public string LANGUAGE { get; set; }
 
         #region [MainWindow]
         public string MAIN { get; set; }
@@ -24,6 +25,24 @@ namespace ACCCServerApp.Wpf.Resource
         public string CHK_TCP_PORT { get; set; }
         public string MAX_CONNECTION { get; set; }
         public string CONFIG_VERSION { get; set; }
+        #endregion
+
+        #region [SETTINGS]
+        public String SERVER_NAME { get; set; }
+        public String SERVER_NAME_TOOLTIP { get; set; }
+        public String ADMIN_PASS { get; set; }
+        public String ADMIN_PASS_TOOLTIP { get; set; }
+
+        public String TRACKMEDALS_REQUIREMENT { get; set; }
+        public String TRACKMEDALS_REQUIREMENT_TOOLTIP { get; set; }
+        public String SAFETYRATING_REQUIREMENT { get; set; }
+        public String SAFETYRATING_REQUIREMENT_TOOLTIP { get; set; }
+        public String RACECRAFTRATING_REQUIREMENT { get; set; }
+        public String RACECRAFTRATING_REQUIREMENT_TOOLTIP { get; set; }
+        public String PASSWORD { get; set; }
+        public String PASSWORD_TOOLTIP { get; set; }
+        public String SPECTATOR_PASSWORD { get; set; }
+        public String SPECTATOR_PASSWORD_TOOLTIP { get; set; }
         #endregion
     }
 }

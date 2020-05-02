@@ -1,15 +1,31 @@
 ﻿{
   "TITLE": "ACCC SERVER MANAGER - GUI",
+  "LANGUAGE": "LANGUAGE",
   "MAIN": "MAIN",
   "SETTINGS": "SETTINS",
   "SERVER_START": "SERVER START",
 
   "CONFIGURATION": "NETWORK CONFIGURATION",
   "EVENT": "RACE EVENT",
-  "SETTING": "SETTING",
+  "SETTING": "PERSONAL SERVER SETTING",
 
   "CHK_UDP_PORT": "Check UDP Port",
   "CHK_TCP_PORT": "Checl TCP Port",
   "MAX_CONNECTION": "Maximum User Connection Count",
-  "CONFIG_VERSION":  "Config Version"
+  "CONFIG_VERSION": "Config Version",
+
+  "SERVER_NAME": "Server Name",
+  "SERVER_NAME_TOOLTIP": "The server name displayed in the ACC UI pages",
+  "ADMIN_PASS": "Administrator Password",
+  "ADMIN_PASS_TOOLTIP": "The password you specify allows a driver or spectator to log in as Server Admin in the chat window ( ENTER key ) of the server.",
+  "TRACKMEDALS_REQUIREMENT": "Trackmedals requirement",
+  "TRACKMEDALS_REQUIREMENT_TOOLTIP": "Defines the amount of track medals that a user has to have for the given track (values, 0, 1, 2, 3)",
+  "SAFETYRATING_REQUIREMENT": "Safety rating requirement",
+  "SAFETYRATING_REQUIREMENT_TOOLTIP": "Defines the Safety Rating (SA) that a user must have to join this server (values, -1~99)",
+  "RACECRAFTRATING_REQUIREMENT": "Racecraft rating requirement",
+  "RACECRAFTRATING_REQUIREMENT_TOOLTIP": "Defines the Racecraft Rating (RC) that a user must have to join this server (values, -1~99)",
+  "PASSWORD": "Server Password",
+  "PASSWORD_TOOLTIP": "Password required to enter this server. If a password is set, the server is declared",
+  "SPECTATOR_PASSWORD": "Spectator password",
+  "SPECTATOR_PASSWORD_TOOLTIP": "Password to enter the server as spectator. Must be different to “password” if both is set."
 }
