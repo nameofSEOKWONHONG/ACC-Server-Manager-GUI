@@ -43,6 +43,24 @@ namespace ACCCServerApp.Wpf.Resource
         public String PASSWORD_TOOLTIP { get; set; }
         public String SPECTATOR_PASSWORD { get; set; }
         public String SPECTATOR_PASSWORD_TOOLTIP { get; set; }
+        public String MAX_CAR_SLOTS { get; set; }
+        public String MAX_CAR_SLOTS_TOOLTIP { get; set; }
+        public String DUMP_LEADERBOARDS { get; set; }
+        public String DUMP_LEADERBOARDS_TOOLTIP { get; set; }
+        public String IS_RACE_LOCKED { get; set; }
+        public String IS_RACE_LOCKED_TOOLTIP { get; set; }
+        public String RANDOMIZE_TRACK_WHEN_EMPTY { get; set; }
+        public String RANDOMIZE_TRACK_WHEN_EMPTY_TOOLTIP { get; set; }
+        public String CENTRAL_ENTRY_LIST_PATH { get; set; }
+        public String CENTRAL_ENTRY_LIST_PATH_TOOLTIP { get; set; }
+        public String ALLOW_AUTO_DQ { get; set; }
+        public String ALLOW_AUTO_DQ_TOOLTIP { get; set; }
+        public String SHORT_FORMATIONLAP { get; set; }
+        public String SHORT_FORMATIONLAP_TOOLTIP { get; set; }
+        public String DUMP_ENTRY_LIST { get; set; }
+        public String DUMP_ENTRY_LIST_TOOLTIP { get; set; }
+        public String FORMATIONLAP_TYPE { get; set; }
+        public String FORMATIONLAP_TYPE_TOOLTIP { get; set; }
         #endregion
     }
 }

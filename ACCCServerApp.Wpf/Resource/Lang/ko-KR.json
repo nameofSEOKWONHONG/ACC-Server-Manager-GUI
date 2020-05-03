@@ -28,5 +28,25 @@
   "PASSWORD": "서버 접속 암호",
   "PASSWORD_TOOLTIP": "서버 접속을 위한 암호",
   "SPECTATOR_PASSWORD": "관전자 암호",
-  "SPECTATOR_PASSWORD_TOOLTIP": "관전자 접속 암호, 암호는 기본 접속 암호와 반드시 달라야 함"
+  "SPECTATOR_PASSWORD_TOOLTIP": "관전자 접속 암호, 암호는 기본 접속 암호와 반드시 달라야 함",
+  "MAX_CAR_SLOTS": "최대 차량 슬롯",
+  "MAX_CAR_SLOTS_TOOLTIP": "서버가 차지할 수 있는 자동차 슬롯의 양을 정의합니다. 트랙의 피트 수가 낮거나 공용 MP의 경우 30이 있는 경우 이 값이 재정의됩니다. maxCarSlots와 maxConnections (configuration.json)의 간격은 서버에있을 수있는 관중 또는 기타 불규칙한 연결 (즉, 엔트리 리스트 항목)의 수를 정의합니다.",
+  "DUMP_LEADERBOARDS": "덤프 리더보드",
+  "DUMP_LEADERBOARDS_TOOLTIP": "1로 설정될 경우 Result폴더에 결과를 기록(values, 0,1)",
+  "IS_RACE_LOCKED": "레이스 잠금",
+  "IS_RACE_LOCKED_TOOLTIP": "레이스 세션 잠금(values, 0(해제), 1(잠금))",
+  "RANDOMIZE_TRACK_WHEN_EMPTY": "랜덤 트랙 변경(플레이어가 없을 경우)",
+  "RANDOMIZE_TRACK_WHEN_EMPTY_TOOLTIP": "1로 설정될 경우 플레이어가 없을 때 랜덤으로 트랙 변경",
+  "CENTRAL_ENTRY_LIST_PATH": "참가자 목록 경로 설정",
+  "CENTRAL_ENTRY_LIST_PATH_TOOLTIP": "참가자 목록 경로 설정, cfg/entrylist.json의 내역을 폴더별로 설정할 경우 해당 참가 목록을 사용",
+  "ALLOW_AUTO_DQ": "자동 DQ 설정",
+  "ALLOW_AUTO_DQ_TOOLTIP": "0으로 설정하면 서버가 자동으로 드라이버를 DQ하지 않고 대신 Stop&Go(30초)패널티를 부과합니다. 이렇게 하면 서버 관리자/경주 책임자가 사건을 검토할 수 있는 랩 3회 동안, 판단에 따라/dq 또는/clear를 사용합니다.",
+  "SHORT_FORMATIONLAP": "숏 포메이션랩",
+  "SHORT_FORMATIONLAP_TOOLTIP": "0:one formation lap, 1:short formation lap",
+  "DUMP_ENTRY_LIST": "덤프 엔트리 리스트",
+  "DUMP_ENTRY_LIST_TOOLTIP": "Qualification세션이 끝나면 항목 목록을 저장합니다. 이것은 진입 목록을 작성하기 위한 출발점을 빠르게 수집할 수 있는 방법이며, 예선 세션과 미리 정의된 그리드 없이 경주를 실행하는 데 사용할 수 있는 기본 값/조건을 저장할 수 있는 방법입니다.",
+  "FORMATIONLAP_TYPE": "포메이션랩 타입",
+  "FORMATIONLAP_TYPE_TOOLTIP": "이 서버에서 영구적으로 사용되는 포메이션 랩 유형을 전환합니다. 5=위치 제어와 UI가 있는 짧은 형성 랩+1개의 음영 처리된 차량, 4=자유형 랩 1회+음영 처리된 차량 1대, 3–위치 제어 및 UI가 있는 기본 성형 랩, 1–구형 제한 장치 무릎,0–무료(교체/수동 시작), 전용 서버에서만 사용 가능"
+
+
 }

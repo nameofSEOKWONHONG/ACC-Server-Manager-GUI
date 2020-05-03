@@ -94,16 +94,82 @@
                      Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SPECTATOR_PASSWORD}"
                      ToolTip="{Binding LanguageResource.SPECTATOR_PASSWORD_TOOLTIP}"
                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.MAX_CAR_SLOTS}"
+                     ToolTip="{Binding LanguageResource.MAX_CAR_SLOTS_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.DUMP_LEADERBOARDS}"
+                     ToolTip="{Binding LanguageResource.DUMP_LEADERBOARDS_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.IS_RACE_LOCKED}"
+                     ToolTip="{Binding LanguageResource.IS_RACE_LOCKED_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.RANDOMIZE_TRACK_WHEN_EMPTY}"
+                     ToolTip="{Binding LanguageResource.RANDOMIZE_TRACK_WHEN_EMPTY_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.CENTRAL_ENTRY_LIST_PATH}"
+                     ToolTip="{Binding LanguageResource.CENTRAL_ENTRY_LIST_PATH_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.ALLOW_AUTO_DQ}"
+                     ToolTip="{Binding LanguageResource.ALLOW_AUTO_DQ_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SHORT_FORMATIONLAP}"
+                     ToolTip="{Binding LanguageResource.SHORT_FORMATIONLAP_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.DUMP_ENTRY_LIST}"
+                     ToolTip="{Binding LanguageResource.DUMP_ENTRY_LIST_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+            <TextBox Margin="{StaticResource ControlMargin}"
+                     HorizontalContentAlignment="Stretch"
+                     Controls:TextBoxHelper.ButtonCommand=""
+                     Controls:TextBoxHelper.ButtonContent="4"
+                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.FORMATIONLAP_TYPE}"
+                     ToolTip="{Binding LanguageResource.FORMATIONLAP_TYPE_TOOLTIP}"
+                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+
+
+
+
         </StackPanel>
     </Grid>
 </UserControl>
