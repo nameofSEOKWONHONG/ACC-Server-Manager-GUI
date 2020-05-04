@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:ACCCServerApp.Wpf.Pages"
         d:DataContext="{d:DesignInstance local:ACSettingsViewModel}"
         mc:Ignorable="d"
-        Height="450" Width="800">
+        Height="auto" Width="auto">
     <UserControl.Resources>
         <Thickness x:Key="ControlMargin">0 5 0 0</Thickness>
 

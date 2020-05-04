@@ -13,6 +13,6 @@ namespace ACCCServerApp.Shard.Models
 
     public partial class TrackList
     {
-        public string ImageUrl { get; set; }
+        public string Image { get; set; }
     }
 }

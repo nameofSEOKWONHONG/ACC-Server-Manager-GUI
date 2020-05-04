@@ -11,8 +11,8 @@
         mc:Ignorable="d"
 
         Title="{Binding LanguageResource.TITLE}"
-        Height="600"
-        Width="800"
+        Height="768"
+        Width="1024"
 
         MinHeight="300"
         MinWidth="300"
@@ -28,6 +28,7 @@
     </Window.Resources>
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
+            <Button Content="Admin Cmd" Click="AdminCommandClick"></Button>
             <Button Content="{Binding LanguageResource.LANGUAGE}" >
                 <Button.ContextMenu>
                     <ContextMenu>
@@ -53,7 +54,6 @@
                         <pages:ACMainBottom></pages:ACMainBottom>
                     </Grid>
                 </Grid>
-
             </TabItem>
             <TabItem Header="{Binding LanguageResource.SETTINGS}">
                 <Controls:MetroAnimatedTabControl x:Name="SettingsTabControl" Grid.Row="1">

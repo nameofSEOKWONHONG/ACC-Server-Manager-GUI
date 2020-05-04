@@ -24,7 +24,10 @@ namespace ACCCServerApp.Wpf
         private readonly IEnumerable<ViewModelBase> _viewModels = new List<ViewModelBase>()
         {
             new MainWindowViewModel(DialogCoordinator.Instance),
+            
             new ACMainBottomViewModel(DialogCoordinator.Instance),
+            new ACMainTopViewModel(DialogCoordinator.Instance),
+
             new ACConfigureViewModel(DialogCoordinator.Instance),
             new ACEventViewModel(DialogCoordinator.Instance),
             new ACSettingsViewModel(DialogCoordinator.Instance),

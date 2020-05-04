@@ -7,6 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resource\Image\Tracks\Barcelona.png" />
+    <None Remove="Resource\Image\Tracks\Brands-Hatch.png" />
+    <None Remove="Resource\Image\Tracks\Hungarorin.jpg" />
+    <None Remove="Resource\Image\Tracks\Kkyalami.jpg" />
+    <None Remove="Resource\Image\Tracks\Laguna_seca.jpg" />
+    <None Remove="Resource\Image\Tracks\Misano.jpg" />
+    <None Remove="Resource\Image\Tracks\Monza.jpg" />
+    <None Remove="Resource\Image\Tracks\Mount_panorama.jpg" />
+    <None Remove="Resource\Image\Tracks\Nurburgring.jpg" />
+    <None Remove="Resource\Image\Tracks\Paul-Ricard.jpg" />
+    <None Remove="Resource\Image\Tracks\Silverstone.png" />
+    <None Remove="Resource\Image\Tracks\Spa-Francorchamps.png" />
+    <None Remove="Resource\Image\Tracks\Suzuka.jpg" />
+    <None Remove="Resource\Image\Tracks\Zandvoort.png" />
+    <None Remove="Resource\Image\Tracks\Zolder.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0660" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="3.2.0" />
@@ -41,6 +59,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ko-KR.json</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\Image\Tracks\Barcelona.png" />
+    <Resource Include="Resource\Image\Tracks\Brands-Hatch.png" />
+    <Resource Include="Resource\Image\Tracks\Hungarorin.jpg" />
+    <Resource Include="Resource\Image\Tracks\Kkyalami.jpg" />
+    <Resource Include="Resource\Image\Tracks\Laguna_seca.jpg" />
+    <Resource Include="Resource\Image\Tracks\Misano.jpg" />
+    <Resource Include="Resource\Image\Tracks\Monza.jpg" />
+    <Resource Include="Resource\Image\Tracks\Mount_panorama.jpg" />
+    <Resource Include="Resource\Image\Tracks\Nurburgring.jpg" />
+    <Resource Include="Resource\Image\Tracks\Paul-Ricard.jpg" />
+    <Resource Include="Resource\Image\Tracks\Silverstone.png" />
+    <Resource Include="Resource\Image\Tracks\Spa-Francorchamps.png" />
+    <Resource Include="Resource\Image\Tracks\Suzuka.jpg" />
+    <Resource Include="Resource\Image\Tracks\Zandvoort.png" />
+    <Resource Include="Resource\Image\Tracks\Zolder.jpg" />
   </ItemGroup>
 
 </Project>

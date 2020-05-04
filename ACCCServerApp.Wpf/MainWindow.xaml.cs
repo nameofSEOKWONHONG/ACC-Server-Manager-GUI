@@ -3,6 +3,7 @@ using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,13 +31,17 @@ namespace ACCCServerApp.Wpf
             DataContext = _viewModel;
 
             InitializeComponent();
-
-            this.Loaded += MainWindow_Loaded;
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void AdminCommandClick(object sender, RoutedEventArgs e)
         {
-            
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "https://www.acc-wiki.info/wiki/Server_Configuration#Admin_Commands",
+                UseShellExecute = true
+            };
+            Process.Start(psi);
+            e.Handled = true;
         }
 
         private void LanguageClickEvent(object sender, RoutedEventArgs e)
@@ -62,5 +67,6 @@ namespace ACCCServerApp.Wpf
                 }
             }
         }
+
     }
 }

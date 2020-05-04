@@ -18,8 +18,11 @@ namespace ACCCServerApp.Wpf.Pages
     /// </summary>
     public partial class ACMainTop : UserControl
     {
+        ACMainTopViewModel _viewModel;
         public ACMainTop()
         {
+            _viewModel = ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>();
+            DataContext = _viewModel;
             InitializeComponent();
         }
     }
