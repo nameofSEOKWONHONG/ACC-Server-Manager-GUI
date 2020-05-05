@@ -15,6 +15,7 @@ namespace ACCCServerApp.Wpf.Resource
 
         public string CONFIGURATION { get; set; }
         public string EVENT { get; set; }
+        public string SESSION { get; set; }
         public string SETTING { get; set; }
         #endregion
 

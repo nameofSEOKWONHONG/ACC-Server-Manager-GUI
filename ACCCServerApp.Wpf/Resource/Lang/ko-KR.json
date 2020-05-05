@@ -7,6 +7,7 @@
 
   "CONFIGURATION": "네트워크 환경",
   "EVENT": "레이스 이벤트",
+  "SESSION": "레이스 세션",
   "SETTING": "개인 서버 설정",
 
   "CHK_UDP_PORT": "UDP 포트 체크",

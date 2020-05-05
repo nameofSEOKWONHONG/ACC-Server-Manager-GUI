@@ -116,7 +116,7 @@
                 <StackPanel>
                     <Button HorizontalAlignment="Stretch"
                             Click="AddSessionClick"
-                            >Add
+                            >Click
                     </Button>
                 </StackPanel>
             </GroupBox>

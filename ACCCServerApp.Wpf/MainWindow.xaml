@@ -63,6 +63,9 @@
                     <TabItem Header="{Binding LanguageResource.EVENT}">
                         <pages:ACEvent></pages:ACEvent>
                     </TabItem>
+                    <TabItem Header="{Binding LanguageResource.SESSION}">
+                        <pages:ACSession></pages:ACSession>
+                    </TabItem>
                     <TabItem Header="{Binding LanguageResource.SETTING}">
                         <pages:ACSettings></pages:ACSettings>
                     </TabItem>
