@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using ACCCServerApp.Shard.Models;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace ACCCServerApp.Wpf.Pages
     /// </summary>
     public partial class ACEvent : UserControl
     {
+        RaceSession SessionDialogItem { get; set; }
         private readonly ACEventViewModel _viewModel;
         private readonly CustomDialog _dialog = null;
         public ACEvent()
@@ -36,32 +38,25 @@ namespace ACCCServerApp.Wpf.Pages
 
         private async void AddSessionClick(object sender, RoutedEventArgs e)
         {
-            await ((MetroWindow)Application.Current.MainWindow).ShowMetroDialogAsync(_dialog);
+            //var customDialog = new CustomDialog() { Title = "Custom Dialog" };
 
-            //var textBlock = dialog.FindChild<TextBlock>("MessageTextBlock");
-            //textBlock.Text = "A message box will appear in 3 seconds.";
+            ////var dataContext = new CustomDialogExampleContent(instance =>
+            ////{
+            ////    this._dialogCoordinator.HideMetroDialogAsync(this, customDialog);
+            ////    System.Diagnostics.Debug.WriteLine(instance.FirstName);
+            ////});
+            //customDialog.Content = new SessionDialog();
 
-            //await Task.Delay(3000);
+            //await this._dialogCoordinator.ShowMetroDialogAsync(this, customDialog);
 
-            //await ((MetroWindow)Application.Current.MainWindow).ShowMessageAsync("Secondary dialog", "This message is shown on top of another.", MessageDialogStyle.Affirmative, new MetroDialogSettings() { OwnerCanCloseWithDialog = true, ColorScheme = ((MetroWindow)Application.Current.MainWindow).MetroDialogOptions.ColorScheme });
+            //await ((MetroWindow)Application.Current.MainWindow).ShowMetroDialogAsync(_dialog);
+            //await _viewModel.SessionSaveCommand(null);
 
-            //textBlock.Text = "The dialog will close in 2 seconds.";
-            //await Task.Delay(2000);
-
-            //await ((MetroWindow)Application.Current.MainWindow).HideMetroDialogAsync(_dialog);
         }
 
         private async void SaveClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.Sessions.Add(new Shard.Models.Sessions()
-            {
-                DayOfWeekend = 0,
-                HourOfDay = 0,
-                SessionDurationMinutes = 0,
-                SessionType = "P",
-                TimeMultiplier = 1
-            });
-
+            this._viewModel.SessionSaveCommand.Execute(_viewModel.Session);
             await ((MetroWindow)Application.Current.MainWindow).HideMetroDialogAsync(_dialog);
         }
 

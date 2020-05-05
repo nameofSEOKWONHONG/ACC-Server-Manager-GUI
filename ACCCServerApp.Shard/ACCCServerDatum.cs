@@ -15,35 +15,35 @@ namespace ACCCServerApp.Shard
         /// <summary>
         /// TRACK LIST (IMPORT DLC TRACKS)
         /// </summary>
-        public static readonly IEnumerable<TrackList> TrackList = new List<TrackList>()
+        public static readonly IEnumerable<RaceTrack> TrackList = new List<RaceTrack>()
         {
-            new TrackList { Value = "monza",  UniquePitBoxes =29  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Monza.jpg"  },
-            new TrackList { Value = "zolder",  UniquePitBoxes =34  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zolder.jpg"  },
-            new TrackList { Value = "brands_hatch",  UniquePitBoxes =32  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Brands-Hatch.png"  },
-            new TrackList { Value = "silverstone",  UniquePitBoxes =36  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Silverstone.png"  },
-            new TrackList { Value = "paul_ricard",  UniquePitBoxes =33  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Paul-Ricard.jpg"  },
-            new TrackList { Value = "misano",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Misano.jpg"  },
-            new TrackList { Value = "spa",  UniquePitBoxes =82  ,   PrivateServerSlots= 82, Image = "/Resource/Image/Tracks/Spa-Francorchamps.png"  },
-            new TrackList { Value = "nurburgring",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Nurburgring.jpg" },
-            new TrackList { Value = "barcelona",  UniquePitBoxes =29  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Barcelona.png"  },
-            new TrackList { Value = "hungaroring",  UniquePitBoxes =27  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Hungarorin.jpg"  },
-            new TrackList { Value = "zandvoort",  UniquePitBoxes =25  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zandvoort.png"  },
-            new TrackList { Value = "monza_2019",  UniquePitBoxes =29  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Monza.jpg"  },
-            new TrackList { Value = "zolder_2019",  UniquePitBoxes =34  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zolder.jpg"  },
-            new TrackList { Value = "brands_hatch_2019",  UniquePitBoxes =32  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Brands-Hatch.png"  },
-            new TrackList { Value = "silverstone_2019",  UniquePitBoxes =36  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Silverstone.png"  },
-            new TrackList { Value = "paul_ricard_2019",  UniquePitBoxes =33  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Paul-Ricard.jpg"  },
-            new TrackList { Value = "misano_2019",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Misano.jpg"  },
-            new TrackList { Value = "spa_2019",  UniquePitBoxes =82  ,   PrivateServerSlots= 82, Image = "/Resource/Image/Tracks/Spa-Francorchamps.png"  },
-            new TrackList { Value = "nurburgring_2019",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Nurburgring.jpg"  },
-            new TrackList { Value = "barcelona_2019",  UniquePitBoxes =29  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Barcelona.png"  },
-            new TrackList { Value = "hungaroring_2019",  UniquePitBoxes =27  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Nurburgring.jpg"  },
-            new TrackList { Value = "zandvoort_2019",  UniquePitBoxes =25  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zandvoort.png"  },
+            new RaceTrack { Value = "monza",  UniquePitBoxes =29  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Monza.jpg"  },
+            new RaceTrack { Value = "zolder",  UniquePitBoxes =34  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zolder.jpg"  },
+            new RaceTrack { Value = "brands_hatch",  UniquePitBoxes =32  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Brands-Hatch.png"  },
+            new RaceTrack { Value = "silverstone",  UniquePitBoxes =36  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Silverstone.png"  },
+            new RaceTrack { Value = "paul_ricard",  UniquePitBoxes =33  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Paul-Ricard.jpg"  },
+            new RaceTrack { Value = "misano",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Misano.jpg"  },
+            new RaceTrack { Value = "spa",  UniquePitBoxes =82  ,   PrivateServerSlots= 82, Image = "/Resource/Image/Tracks/Spa-Francorchamps.png"  },
+            new RaceTrack { Value = "nurburgring",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Nurburgring.jpg" },
+            new RaceTrack { Value = "barcelona",  UniquePitBoxes =29  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Barcelona.png"  },
+            new RaceTrack { Value = "hungaroring",  UniquePitBoxes =27  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Hungarorin.jpg"  },
+            new RaceTrack { Value = "zandvoort",  UniquePitBoxes =25  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zandvoort.png"  },
+            new RaceTrack { Value = "monza_2019",  UniquePitBoxes =29  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Monza.jpg"  },
+            new RaceTrack { Value = "zolder_2019",  UniquePitBoxes =34  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zolder.jpg"  },
+            new RaceTrack { Value = "brands_hatch_2019",  UniquePitBoxes =32  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Brands-Hatch.png"  },
+            new RaceTrack { Value = "silverstone_2019",  UniquePitBoxes =36  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Silverstone.png"  },
+            new RaceTrack { Value = "paul_ricard_2019",  UniquePitBoxes =33  ,   PrivateServerSlots= 60, Image = "/Resource/Image/Tracks/Paul-Ricard.jpg"  },
+            new RaceTrack { Value = "misano_2019",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Misano.jpg"  },
+            new RaceTrack { Value = "spa_2019",  UniquePitBoxes =82  ,   PrivateServerSlots= 82, Image = "/Resource/Image/Tracks/Spa-Francorchamps.png"  },
+            new RaceTrack { Value = "nurburgring_2019",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Nurburgring.jpg"  },
+            new RaceTrack { Value = "barcelona_2019",  UniquePitBoxes =29  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Barcelona.png"  },
+            new RaceTrack { Value = "hungaroring_2019",  UniquePitBoxes =27  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Nurburgring.jpg"  },
+            new RaceTrack { Value = "zandvoort_2019",  UniquePitBoxes =25  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Zandvoort.png"  },
             // DLC
-            new TrackList { Value = "kyalami_2019",  UniquePitBoxes =40  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Kyalami.jpg"  },
-            new TrackList { Value = "mount_panorama_2019",  UniquePitBoxes =36  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Mount_panorama.jpg"  },
-            new TrackList { Value = "suzuka_2019",  UniquePitBoxes =51  ,   PrivateServerSlots= 105, Image = "/Resource/Image/Tracks/Suzuka.jpg" },
-            new TrackList { Value = "laguna_seca_2019",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Laguna_seca.jpg"  },
+            new RaceTrack { Value = "kyalami_2019",  UniquePitBoxes =40  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Kyalami.jpg"  },
+            new RaceTrack { Value = "mount_panorama_2019",  UniquePitBoxes =36  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Mount_panorama.jpg"  },
+            new RaceTrack { Value = "suzuka_2019",  UniquePitBoxes =51  ,   PrivateServerSlots= 105, Image = "/Resource/Image/Tracks/Suzuka.jpg" },
+            new RaceTrack { Value = "laguna_seca_2019",  UniquePitBoxes =30  ,   PrivateServerSlots= 50, Image = "/Resource/Image/Tracks/Laguna_seca.jpg"  },
         };
 
         /// <summary>
@@ -54,9 +54,11 @@ namespace ACCCServerApp.Shard
         /// <summary>
         /// DAY WEEK OF SESSION
         /// </summary>
-        public static readonly Dictionary<string, int> DayOfWeeken = new Dictionary<string, int>()
+        public static readonly List<KeyValueSimpleModel> DayOfWeeken = new List<KeyValueSimpleModel>()
         {
-            {"Friday", 1 }, { "Saturday", 2}, {"Sunday", 3}
+            new KeyValueSimpleModel() {Key = "Friday", Value = "1" },
+            new KeyValueSimpleModel() {Key = "Saturday", Value = "2" },
+            new KeyValueSimpleModel() {Key = "Sunday", Value = "3" },
         };
 
         public static readonly IEnumerable<int> TimeMultiplier = Enumerable.Range(0, 24);
@@ -64,9 +66,11 @@ namespace ACCCServerApp.Shard
         /// <summary>
         /// SESSION TYPE
         /// </summary>
-        public static readonly Dictionary<string, string> SessionType = new Dictionary<string, string>()
+        public static readonly List<KeyValueSimpleModel> SessionType = new List<KeyValueSimpleModel>()
         {
-            {"Practice", "P" }, { "Qualy", "Q"}, { "Race", "R" }
+            new KeyValueSimpleModel() {Key = "Practice", Value = "P" },
+            new KeyValueSimpleModel() {Key = "Qualify", Value = "Q" },
+            new KeyValueSimpleModel() {Key = "Race", Value = "R" },
         };
 
         /// <summary>
@@ -83,5 +87,11 @@ namespace ACCCServerApp.Shard
         /// RACE RATING (LIMIT REQUIRE)
         /// </summary>
         public static readonly IEnumerable<int> RacecraftRatingRequirement = Enumerable.Range(-1, 99);
+    }
+
+    public class KeyValueSimpleModel
+    {
+        public string Key { get; set; }
+        public string Value { get; set; }
     }
 }

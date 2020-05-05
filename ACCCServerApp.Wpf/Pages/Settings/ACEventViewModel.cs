@@ -1,12 +1,15 @@
 ﻿using ACCCServerApp.Shard;
 using ACCCServerApp.Shard.Models;
 using ACCCServerApp.Wpf.Core;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace ACCCServerApp.Wpf.Pages
@@ -22,24 +25,33 @@ namespace ACCCServerApp.Wpf.Pages
 
         private readonly IDialogCoordinator _dialogCoordinator;
 
-        public IEnumerable<TrackList> TrackList { get; set; } = ACCCServerDatum.TrackList;
-        public Sessions Session { get; set; } = new Sessions();
+        #region [readonly itemsource]
+        public IEnumerable<RaceTrack> TrackList { get; } = ACCCServerDatum.TrackList;
+        public IEnumerable<KeyValueSimpleModel> DayOfWeekens { get; } = ACCCServerDatum.DayOfWeeken;
+        public IEnumerable<KeyValueSimpleModel> SessionTypes { get; } = ACCCServerDatum.SessionType;
+        #endregion
 
-        private List<Sessions> _sessions = new List<Sessions>();
-        public List<Sessions> Sessions
+        public RaceTrack SelectedTrack { get; set; }
+        public RaceSession Session { get; set; } = new RaceSession();
+
+        public Event EventItem { get; set; } = new Event();
+
+        private List<RaceSession> _sessions = new List<RaceSession>();
+        public List<RaceSession> Sessions
         {
             get
             {
-                return _sessions;
+                return EventItem.Sessions;
             }
             set
             {
-                _sessions = value;
+                EventItem.Sessions = value;
                 OnPropertyChanged("Sessions");
             }
         }
 
         public ICommand TrackDropDownMenuItemCommand { get; set; }
+        public ICommand SessionSaveCommand { get; set; }
 
         public ACEventViewModel(IDialogCoordinator dialogCoordinator)
         {
@@ -50,7 +62,8 @@ namespace ACCCServerApp.Wpf.Pages
                 {
                     if(x != null)
                     {
-
+                        SelectedTrack = x as RaceTrack;
+                        ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>().SelectedTrack = this.SelectedTrack;
                     }
                 }
             );

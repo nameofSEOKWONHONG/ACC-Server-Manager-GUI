@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ACCCServerApp.Shard.Models
 {
-    public class Sessions
+    public class RaceSession
     {
         public int HourOfDay { get; set; } = 6;
         public int DayOfWeekend { get; set; } = 2;
@@ -13,7 +13,7 @@ namespace ACCCServerApp.Shard.Models
         public string SessionType { get; set; } = "P";
         public int SessionDurationMinutes { get; set; } = 10;
 
-        public class Validator : AbstractValidator<Sessions>
+        public class Validator : AbstractValidator<RaceSession>
         {
             public Validator()
             {

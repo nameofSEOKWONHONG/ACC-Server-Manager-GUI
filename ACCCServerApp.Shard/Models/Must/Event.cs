@@ -27,7 +27,7 @@ namespace ACCCServerApp.Shard.Models
         //public string IsFixedConditionQualification { get; set; }
         #endregion
 
-        public List<Sessions> Sessions { get; set; } = new List<Sessions>();
+        public List<RaceSession> Sessions { get; set; } = new List<RaceSession>();
 
         public int ConfigVersion { get; set; } = 1;
 

@@ -22,17 +22,30 @@ namespace ACCCServerApp.Wpf.Pages
 
         private readonly IDialogCoordinator _dialogCoordinator;
 
-        public TrackList SelectedTrack { get; set; } = ACCCServerDatum.TrackList.ToList()[0];
-        public Event SelectedEvent { get; set; } = new Event
-        {
-            AmbientTemp = 25,
-            Sessions = new List<Sessions>()
+        private RaceTrack _selectedTrack;
+        public RaceTrack SelectedTrack {
+            get
             {
-                new Sessions(){DayOfWeekend = 1, HourOfDay = 6, SessionDurationMinutes = 10, SessionType = "P", TimeMultiplier = 1},
-                new Sessions(){DayOfWeekend = 1, HourOfDay = 6, SessionDurationMinutes = 10, SessionType = "Q", TimeMultiplier = 1},
-                new Sessions(){DayOfWeekend = 1, HourOfDay = 6, SessionDurationMinutes = 10, SessionType = "R", TimeMultiplier = 1},
+                return _selectedTrack;
             }
-        };
+            set
+            {
+                _selectedTrack = value;
+                OnPropertyChanged("SelectedTrack");
+            }
+        }
+
+        public Event _selectedEvent;
+        public Event SelectedEvent { get
+            {
+                return _selectedEvent;
+            }
+            set
+            {
+                _selectedEvent = value;
+                OnPropertyChanged("SelectedEvent");
+            }
+        }
 
         public ACMainTopViewModel(IDialogCoordinator dialogCoordinator)
         {

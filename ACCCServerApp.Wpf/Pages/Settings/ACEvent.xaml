@@ -35,80 +35,6 @@
                 <x:Type TypeName="Controls:ButtonsAlignment" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-
-        <UserControl x:Key="SessionDialog"
-                     x:Name="SessionDialog"
-                     MinHeight="200">
-
-            <StackPanel>
-                <TextBox Margin="{StaticResource ControlMargin}"
-                     HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
-                     Controls:TextBoxHelper.ButtonContent="4"
-                     Controls:TextBoxHelper.UseFloatingWatermark="True"
-                     Controls:TextBoxHelper.Watermark="Hour of day"
-                     ToolTip="Session starting hour of the day. (Values 0, 1, 2 ... 22, 23)"
-                     Style="{DynamicResource MahApps.Styles.TextBox}">
-                </TextBox>
-                <Controls:DropDownButton Margin="5"
-                                Content="Day of weekend"
-                                DisplayMemberPath="Value"
-                                ItemsSource="{Binding TrackList}"
-                                 Grid.Row="0">
-                    <Controls:DropDownButton.ItemContainerStyle>
-                        <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
-                            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:DropDownButton}}, Path=DataContext.TrackDropDownMenuItemCommand}" />
-                            <Setter Property="CommandParameter" Value="{Binding Value}" />
-                        </Style>
-                    </Controls:DropDownButton.ItemContainerStyle>
-                    <Controls:DropDownButton.Icon>
-                        <iconPacks:PackIconMaterial Margin="6" Kind="Calendar" />
-                    </Controls:DropDownButton.Icon>
-                </Controls:DropDownButton>
-                <TextBox Margin="{StaticResource ControlMargin}"
-                     HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
-                     Controls:TextBoxHelper.ButtonContent="4"
-                     Controls:TextBoxHelper.UseFloatingWatermark="True"
-                     Controls:TextBoxHelper.Watermark="Time Multiplier"
-                     ToolTip="Rate at which the session time advances in realtime. (Values 0, 1, ... 24)"
-                     Style="{DynamicResource MahApps.Styles.TextBox}">
-                </TextBox>
-                <Controls:DropDownButton Margin="5"
-                                Content="Session Type"
-                                DisplayMemberPath="Value"
-                                ItemsSource="{Binding TrackList}"
-                                 Grid.Row="0">
-                    <Controls:DropDownButton.ItemContainerStyle>
-                        <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
-                            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:DropDownButton}}, Path=DataContext.TrackDropDownMenuItemCommand}" />
-                            <Setter Property="CommandParameter" Value="{Binding Value}" />
-                        </Style>
-                    </Controls:DropDownButton.ItemContainerStyle>
-                    <Controls:DropDownButton.Icon>
-                        <iconPacks:PackIconMaterial Margin="6" Kind="FormatListBulletedType" />
-                    </Controls:DropDownButton.Icon>
-                </Controls:DropDownButton>
-                <TextBox Margin="{StaticResource ControlMargin}"
-                     HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
-                     Controls:TextBoxHelper.ButtonContent="4"
-                     Controls:TextBoxHelper.UseFloatingWatermark="True"
-                     Controls:TextBoxHelper.Watermark="Config Version"
-                     ToolTip="Check udp port"
-                     Style="{DynamicResource MahApps.Styles.TextBox}">
-                </TextBox>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Click="SaveClick">Save</Button>
-                    <Button Grid.Column="1" Click="CloseClick">Close</Button>
-                </Grid>
-            </StackPanel>
-
-        </UserControl>
     </UserControl.Resources>
     <Grid>
         <StackPanel>
@@ -120,7 +46,7 @@
                 <Controls:DropDownButton.ItemContainerStyle>
                     <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
                         <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:DropDownButton}}, Path=DataContext.TrackDropDownMenuItemCommand}" />
-                        <Setter Property="CommandParameter" Value="{Binding Value}" />
+                        <Setter Property="CommandParameter" Value="{Binding}" />
                     </Style>
                 </Controls:DropDownButton.ItemContainerStyle>
                 <Controls:DropDownButton.Icon>
@@ -129,7 +55,7 @@
             </Controls:DropDownButton>
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Text="{Binding EventItem.PreRaceWaitingTimeSeconds}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="Pre Race Waiting Time Seconds"
@@ -137,7 +63,7 @@
                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Text="{Binding EventItem.SessionOverTimeSeconds}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="Session Over Time Seconds"
@@ -145,7 +71,7 @@
                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Text="{Binding EventItem.AmbientTemp}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="Ambient Temp"
@@ -154,7 +80,7 @@
 
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Text="{Binding EventItem.CloudLevel}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="Cloud Level"
@@ -162,7 +88,7 @@
                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Text="{Binding EventItem.Rain}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="Rain"
@@ -170,7 +96,7 @@
                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Text="{Binding EventItem.WeatherRandomness}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="Weather Randomness"
@@ -178,7 +104,7 @@
                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
             <TextBox Margin="{StaticResource ControlMargin}"
                      HorizontalContentAlignment="Stretch"
-                     Controls:TextBoxHelper.ButtonCommand="{Binding PortCheckCommand, Mode=OneWay}"
+                     Text="{Binding EventItem.ConfigVersion}"
                      Controls:TextBoxHelper.ButtonContent="4"
                      Controls:TextBoxHelper.UseFloatingWatermark="True"
                      Controls:TextBoxHelper.Watermark="Config Version"

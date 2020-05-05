@@ -30,6 +30,7 @@ namespace ACCCServerApp.Wpf
 
             new ACConfigureViewModel(DialogCoordinator.Instance),
             new ACEventViewModel(DialogCoordinator.Instance),
+            new ACSessionViewModel(DialogCoordinator.Instance),
             new ACSettingsViewModel(DialogCoordinator.Instance),
         };
 
