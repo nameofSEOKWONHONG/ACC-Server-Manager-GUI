@@ -18,8 +18,12 @@ namespace ACCCServerApp.Wpf.Pages
     /// </summary>
     public partial class ACSession : UserControl
     {
+
+        private readonly ACSessionViewModel _viewModel;
         public ACSession()
         {
+            _viewModel = ViewModelContainer.Instance.GetInstance<ACSessionViewModel>();
+            DataContext = _viewModel;
             InitializeComponent();
         }
     }

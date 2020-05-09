@@ -1,12 +1,101 @@
 ﻿<UserControl x:Class="ACCCServerApp.Wpf.Pages.ACSession"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:local="clr-namespace:ACCCServerApp.Wpf.Pages"
+             d:DataContext="{d:DesignInstance local:ACSessionViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Thickness x:Key="ControlMargin">0 5 0 0</Thickness>
+
+        <ObjectDataProvider x:Key="NumericInputValues"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type Controls:NumericInput}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Controls:NumericInput" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="TextAlignmentValues"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type TextAlignment}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="TextAlignment" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="ButtonsAlignmentValues"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type Controls:ButtonsAlignment}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Controls:ButtonsAlignment" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
-            
+        <ItemsControl ItemsSource="{Binding RaceSessions}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <GroupBox
+                    Margin="4 2"
+                    Header="{Binding GroupHeader}">
+                        <StackPanel VerticalAlignment="Center">
+                            <mah:ToggleSwitch IsChecked="{Binding UseYN}"
+                                      Style="{StaticResource MahApps.Styles.ToggleSwitch.Win10}"
+                                      OnLabel="Y"
+                                      OffLabel="N"
+                                      HorizontalAlignment="Left"
+                                      Header="USE YN"/>
+                            <TextBox Margin="{StaticResource ControlMargin}"
+                                     HorizontalContentAlignment="Stretch"
+                                     Text="{Binding HourOfDay}"
+                                     Controls:TextBoxHelper.ButtonContent="4"
+                                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.HOUR_OF_DAY}"
+                                     ToolTip="{Binding LanguageResource.HOUR_OF_DAY_TOOLTIP}"
+                                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+                            <TextBox Margin="{StaticResource ControlMargin}"
+                                     HorizontalContentAlignment="Stretch"
+                                     Text="{Binding DayOfWeekend}"
+                                     Controls:TextBoxHelper.ButtonContent="4"
+                                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.DAY_OF_WEEKEND}"
+                                     ToolTip="{Binding LanguageResource.DAY_OF_WEEKEND_TOOLTIP}"
+                                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+                            <TextBox Margin="{StaticResource ControlMargin}"
+                                     HorizontalContentAlignment="Stretch"
+                                     Text="{Binding TimeMultiplier}"
+                                     Controls:TextBoxHelper.ButtonContent="4"
+                                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.TIME_MULTIPLIER}"
+                                     ToolTip="{Binding LanguageResource.TIME_MULTIPLIER_TOOLTIP}"
+                                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+                            <TextBox Margin="{StaticResource ControlMargin}"
+                                     HorizontalContentAlignment="Stretch"
+                                     Text="{Binding SessionType}"
+                                     Controls:TextBoxHelper.ButtonContent="4"
+                                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SESSION_TYPE}"
+                                     ToolTip="{Binding LanguageResource.SESSION_TYPE_TOOLTIP}"
+                                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+                            <TextBox Margin="{StaticResource ControlMargin}"
+                                     HorizontalContentAlignment="Stretch"
+                                     Text="{Binding SessionDurationMinutes}"
+                                     Controls:TextBoxHelper.ButtonContent="4"
+                                     Controls:TextBoxHelper.UseFloatingWatermark="True"
+                                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SESSION_DURATION_MINUTES}"
+                                     ToolTip="{Binding LanguageResource.SESSION_DURATION_MINUTES_TOOLTIP}"
+                                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
+                        </StackPanel>
+                    </GroupBox>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
     </Grid>
 </UserControl>

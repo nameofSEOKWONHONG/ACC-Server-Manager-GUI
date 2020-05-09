@@ -1,5 +1,4 @@
-﻿using ACCCServerApp.Wpf.Language;
-using ACCCServerApp.Wpf.Resource;
+﻿using ACCCServerApp.Shard;
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using SharpDX.Direct2D1.Effects;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ACCCServerApp.Shard.Models
 {
@@ -13,6 +16,6 @@ namespace ACCCServerApp.Shard.Models
 
     public partial class RaceTrack
     {
-        public string Image { get; set; }
+        public string ImagePath { get; set; }
     }
 }

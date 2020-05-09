@@ -1,4 +1,5 @@
-﻿using ACCCServerApp.Wpf.Language;
+﻿using ACCCServerApp.Shard;
+using ACCCServerApp.Wpf.Pages;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -33,6 +34,16 @@ namespace ACCCServerApp.Wpf
             InitializeComponent();
         }
 
+        private void SaveClickEvent(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoadClickEvent(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void AdminCommandClick(object sender, RoutedEventArgs e)
         {
             ProcessStartInfo psi = new ProcessStartInfo
@@ -57,6 +68,11 @@ namespace ACCCServerApp.Wpf
                     {
                         viewmodel.LanguageResource = LanguageHandler.Instance["en-US"];
                     }
+
+                    ViewModelContainer.Instance.GetInstance<ACSessionViewModel>().RaceSessions.ForEach(item =>
+                    {
+                        item.LanguageResource = LanguageHandler.Instance["en-US"];
+                    });
                 }
                 else
                 {
@@ -64,6 +80,11 @@ namespace ACCCServerApp.Wpf
                     {
                         viewmodel.LanguageResource = LanguageHandler.Instance["ko-KR"];
                     }
+
+                    ViewModelContainer.Instance.GetInstance<ACSessionViewModel>().RaceSessions.ForEach(item =>
+                    {
+                        item.LanguageResource = LanguageHandler.Instance["ko-KR"];
+                    });
                 }
             }
         }

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ACCCServerApp.Wpf.Resource
+namespace ACCCServerApp.Shard
 {
     public class LanguageResource
     {
+        #region [APP]
         public string TITLE { get; set; }
         public string LANGUAGE { get; set; }
+        #endregion
 
-        #region [MainWindow]
+        #region [MENU]
         public string MAIN { get; set; }
         public string SETTINGS { get; set; }
 
@@ -62,6 +64,21 @@ namespace ACCCServerApp.Wpf.Resource
         public String DUMP_ENTRY_LIST_TOOLTIP { get; set; }
         public String FORMATIONLAP_TYPE { get; set; }
         public String FORMATIONLAP_TYPE_TOOLTIP { get; set; }
+
+
+        #endregion
+
+        #region [RaceSession]
+        public String HOUR_OF_DAY { get; set; }
+        public String HOUR_OF_DAY_TOOLTIP { get; set; }
+        public String DAY_OF_WEEKEND { get; set; }
+        public String DAY_OF_WEEKEND_TOOLTIP { get; set; }
+        public String TIME_MULTIPLIER { get; set; }
+        public String TIME_MULTIPLIER_TOOLTIP { get; set; }
+        public String SESSION_TYPE { get; set; }
+        public String SESSION_TYPE_TOOLTIP { get; set; }
+        public String SESSION_DURATION_MINUTES { get; set; }
+        public String SESSION_DURATION_MINUTES_TOOLTIP { get; set; }
         #endregion
     }
 }

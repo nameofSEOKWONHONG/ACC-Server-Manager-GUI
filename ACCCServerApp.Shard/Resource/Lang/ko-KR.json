@@ -47,7 +47,17 @@
   "DUMP_ENTRY_LIST": "덤프 엔트리 리스트",
   "DUMP_ENTRY_LIST_TOOLTIP": "Qualification세션이 끝나면 항목 목록을 저장합니다. 이것은 진입 목록을 작성하기 위한 출발점을 빠르게 수집할 수 있는 방법이며, 예선 세션과 미리 정의된 그리드 없이 경주를 실행하는 데 사용할 수 있는 기본 값/조건을 저장할 수 있는 방법입니다.",
   "FORMATIONLAP_TYPE": "포메이션랩 타입",
-  "FORMATIONLAP_TYPE_TOOLTIP": "이 서버에서 영구적으로 사용되는 포메이션 랩 유형을 전환합니다. 5=위치 제어와 UI가 있는 짧은 형성 랩+1개의 음영 처리된 차량, 4=자유형 랩 1회+음영 처리된 차량 1대, 3–위치 제어 및 UI가 있는 기본 성형 랩, 1–구형 제한 장치 무릎,0–무료(교체/수동 시작), 전용 서버에서만 사용 가능"
+  "FORMATIONLAP_TYPE_TOOLTIP": "이 서버에서 영구적으로 사용되는 포메이션 랩 유형을 전환합니다. 5=위치 제어와 UI가 있는 짧은 형성 랩+1개의 음영 처리된 차량, 4=자유형 랩 1회+음영 처리된 차량 1대, 3–위치 제어 및 UI가 있는 기본 성형 랩, 1–구형 제한 장치 무릎,0–무료(교체/수동 시작), 전용 서버에서만 사용 가능",
+  "HOUR_OF_DAY": "Hour of day",
+  "HOUR_OF_DAY_TOOLTIP": "세션 시작 시간",
+  "DAY_OF_WEEKEND": "Day of weekend",
+  "DAY_OF_WEEKEND_TOOLTIP": "세션 시작 주(금,토,일)",
+  "TIME_MULTIPLIER": "Time multiplier",
+  "TIME_MULTIPLIER_TOOLTIP": "시간 배속(온도, 날씨를 제외한 차량에는 영향 없음)",
+  "SESSION_TYPE": "Session Type",
+  "SESSION_TYPE_TOOLTIP": "세션 타입(P:연습, Q:퀄리파잉, R:레이스)",
+  "SESSION_DURATION_MINUTES": "Session duration minutes",
+  "SESSION_DURATION_MINUTES_TOOLTIP": "세션 진행 시간"
 
 
 }

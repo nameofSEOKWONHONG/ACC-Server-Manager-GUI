@@ -10,7 +10,7 @@
     <None Remove="Resource\Image\Tracks\Barcelona.png" />
     <None Remove="Resource\Image\Tracks\Brands-Hatch.png" />
     <None Remove="Resource\Image\Tracks\Hungarorin.jpg" />
-    <None Remove="Resource\Image\Tracks\Kkyalami.jpg" />
+    <None Remove="Resource\Image\Tracks\Kyalami.jpg" />
     <None Remove="Resource\Image\Tracks\Laguna_seca.jpg" />
     <None Remove="Resource\Image\Tracks\Misano.jpg" />
     <None Remove="Resource\Image\Tracks\Monza.jpg" />
@@ -37,35 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resource\ko-KR.json">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ko-KR.cs</LastGenOutput>
-    </None>
-    <None Update="Resource\Lang\en-US.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resource\Lang\ko-KR.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resource\ko-KR.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ko-KR.json</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resource\Image\Tracks\Barcelona.png" />
     <Resource Include="Resource\Image\Tracks\Brands-Hatch.png" />
     <Resource Include="Resource\Image\Tracks\Hungarorin.jpg" />
-    <Resource Include="Resource\Image\Tracks\Kkyalami.jpg" />
+    <Resource Include="Resource\Image\Tracks\Kyalami.jpg" />
     <Resource Include="Resource\Image\Tracks\Laguna_seca.jpg" />
     <Resource Include="Resource\Image\Tracks\Misano.jpg" />
     <Resource Include="Resource\Image\Tracks\Monza.jpg" />
@@ -77,6 +52,10 @@
     <Resource Include="Resource\Image\Tracks\Suzuka.jpg" />
     <Resource Include="Resource\Image\Tracks\Zandvoort.png" />
     <Resource Include="Resource\Image\Tracks\Zolder.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

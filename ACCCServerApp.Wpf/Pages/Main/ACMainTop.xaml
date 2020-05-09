@@ -14,9 +14,10 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Stretch="UniformToFill"
-            Source="{Binding SelectedTrack.Image}"
+            Source="{Binding SelectedTrack.ImagePath}"
             >
         </Image>
+
         <StackPanel HorizontalAlignment="Right" 
                     VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
