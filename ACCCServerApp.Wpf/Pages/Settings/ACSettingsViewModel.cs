@@ -1,4 +1,5 @@
-﻿using ACCCServerApp.Wpf.Core;
+﻿using ACCCServerApp.Shard.Models;
+using ACCCServerApp.Wpf.Core;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace ACCCServerApp.Wpf.Pages
         public string Error => string.Empty;
 
         private readonly IDialogCoordinator _dialogCoordinator;
+
+        public Settings Settings { get; set; }
 
         public ACSettingsViewModel(IDialogCoordinator dialogCoordinator)
         {

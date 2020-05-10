@@ -9,6 +9,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Timers;
+using System.Windows.Input;
 
 namespace ACCCServerApp.Wpf.Pages
 {
@@ -61,6 +63,8 @@ namespace ACCCServerApp.Wpf.Pages
             }
         };
 
+        public ICommand RaceSessionSaveCommand { get; set; }
+
         public ACSessionViewModel(IDialogCoordinator dialogCoordinator)
         {
             this.RaceSessions.ForEach(item =>
@@ -68,14 +72,13 @@ namespace ACCCServerApp.Wpf.Pages
                 item.LanguageResource = this.LanguageResource;
             });
             this._dialogCoordinator = dialogCoordinator;
-        }
 
-        public bool SaveRaceSession(RaceSession raceSession)
-        {
-            this.RaceSessions.Clear();
-            var raceSessions = this.RaceSessions.Where(m => m.UseYN == true).ToList();
-            RaceSessions.AddRange(raceSessions);
-            return true;
+            Timer timer = new Timer(1000);
+            timer.Elapsed += (s, e) =>
+            {
+                ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>().SelectedRaceSessions = this.RaceSessions;
+            };
+            timer.Start();
         }
 
         public void Dispose()

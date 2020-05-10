@@ -26,13 +26,6 @@ namespace ACCCServerApp.Wpf.Pages
             _viewModel.SelectedEvent = ViewModelContainer.Instance.GetInstance<ACEventViewModel>().EventItem;
             DataContext = _viewModel;
             InitializeComponent();
-
-            Loaded += ACMainTop_Loaded;
-        }
-
-        private void ACMainTop_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

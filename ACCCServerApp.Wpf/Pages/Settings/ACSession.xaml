@@ -38,20 +38,25 @@
         </ObjectDataProvider>
     </UserControl.Resources>
     <Grid>
-        <ItemsControl ItemsSource="{Binding RaceSessions}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <GroupBox
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <ItemsControl ItemsSource="{Binding RaceSessions}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <GroupBox
                     Margin="4 2"
                     Header="{Binding GroupHeader}">
-                        <StackPanel VerticalAlignment="Center">
-                            <mah:ToggleSwitch IsChecked="{Binding UseYN}"
+                            <StackPanel VerticalAlignment="Center">
+                                <mah:ToggleSwitch IsChecked="{Binding UseYN}"
                                       Style="{StaticResource MahApps.Styles.ToggleSwitch.Win10}"
                                       OnLabel="Y"
                                       OffLabel="N"
                                       HorizontalAlignment="Left"
                                       Header="USE YN"/>
-                            <TextBox Margin="{StaticResource ControlMargin}"
+                                <TextBox Margin="{StaticResource ControlMargin}"
                                      HorizontalContentAlignment="Stretch"
                                      Text="{Binding HourOfDay}"
                                      Controls:TextBoxHelper.ButtonContent="4"
@@ -59,7 +64,7 @@
                                      Controls:TextBoxHelper.Watermark="{Binding LanguageResource.HOUR_OF_DAY}"
                                      ToolTip="{Binding LanguageResource.HOUR_OF_DAY_TOOLTIP}"
                                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
-                            <TextBox Margin="{StaticResource ControlMargin}"
+                                <TextBox Margin="{StaticResource ControlMargin}"
                                      HorizontalContentAlignment="Stretch"
                                      Text="{Binding DayOfWeekend}"
                                      Controls:TextBoxHelper.ButtonContent="4"
@@ -67,7 +72,7 @@
                                      Controls:TextBoxHelper.Watermark="{Binding LanguageResource.DAY_OF_WEEKEND}"
                                      ToolTip="{Binding LanguageResource.DAY_OF_WEEKEND_TOOLTIP}"
                                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
-                            <TextBox Margin="{StaticResource ControlMargin}"
+                                <TextBox Margin="{StaticResource ControlMargin}"
                                      HorizontalContentAlignment="Stretch"
                                      Text="{Binding TimeMultiplier}"
                                      Controls:TextBoxHelper.ButtonContent="4"
@@ -75,15 +80,17 @@
                                      Controls:TextBoxHelper.Watermark="{Binding LanguageResource.TIME_MULTIPLIER}"
                                      ToolTip="{Binding LanguageResource.TIME_MULTIPLIER_TOOLTIP}"
                                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
-                            <TextBox Margin="{StaticResource ControlMargin}"
-                                     HorizontalContentAlignment="Stretch"
-                                     Text="{Binding SessionType}"
-                                     Controls:TextBoxHelper.ButtonContent="4"
-                                     Controls:TextBoxHelper.UseFloatingWatermark="True"
-                                     Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SESSION_TYPE}"
-                                     ToolTip="{Binding LanguageResource.SESSION_TYPE_TOOLTIP}"
-                                     Style="{DynamicResource MahApps.Styles.TextBox}"/>
-                            <TextBox Margin="{StaticResource ControlMargin}"
+                                <TextBox Margin="{StaticResource ControlMargin}"
+                                         HorizontalContentAlignment="Stretch"
+                                         Text="{Binding SessionType}"
+                                         Controls:TextBoxHelper.ButtonContent="4"
+                                         Controls:TextBoxHelper.UseFloatingWatermark="True"
+                                         Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SESSION_TYPE}"
+                                         ToolTip="{Binding LanguageResource.SESSION_TYPE_TOOLTIP}"
+                                         Style="{DynamicResource MahApps.Styles.TextBox}"
+                                         IsReadOnly="True"
+                                         />
+                                <TextBox Margin="{StaticResource ControlMargin}"
                                      HorizontalContentAlignment="Stretch"
                                      Text="{Binding SessionDurationMinutes}"
                                      Controls:TextBoxHelper.ButtonContent="4"
@@ -91,11 +98,19 @@
                                      Controls:TextBoxHelper.Watermark="{Binding LanguageResource.SESSION_DURATION_MINUTES}"
                                      ToolTip="{Binding LanguageResource.SESSION_DURATION_MINUTES_TOOLTIP}"
                                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
-                        </StackPanel>
-                    </GroupBox>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-
+                            </StackPanel>
+                        </GroupBox>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>        
+        <StackPanel Grid.Row="1">
+            <Button Width="100"
+                    Margin="{StaticResource ControlMargin}"
+                    Content="Save"
+                    IsEnabled="True"
+                    Style="{DynamicResource MahApps.Styles.Button.Square}" 
+                    Command="{Binding RaceSessionSaveCommand}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

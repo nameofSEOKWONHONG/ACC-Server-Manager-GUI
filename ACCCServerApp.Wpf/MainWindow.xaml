@@ -28,10 +28,10 @@
     </Window.Resources>
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
-            <Button ToolTip="Open up the GitHub site">
-                <iconPacks:PackIconModern Width="22"
+            <Button ToolTip="File save and load settings">
+                <iconPacks:PackIconBoxIcons Width="22"
                                   Height="22"
-                                  Kind="Settings" />
+                                  Kind="SolidSave" />
                 <Button.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="Save" Click="SaveClickEvent"/>
@@ -58,15 +58,8 @@
         <Controls:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="0">
             <TabItem Header="{Binding LanguageResource.MAIN}">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="100"></RowDefinition>
-                    </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <pages:ACMainTop></pages:ACMainTop>
-                    </Grid>
-                    <Grid Grid.Row="1">
-                        <pages:ACMainBottom></pages:ACMainBottom>
                     </Grid>
                 </Grid>
             </TabItem>

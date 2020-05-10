@@ -9,28 +9,8 @@
              d:DataContext="{d:DesignInstance local:ACMainBottomViewModel}"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <Thickness x:Key="ControlMargin">0 5 0 0</Thickness>
-    </UserControl.Resources>
+
     <Grid>
-        <StackPanel Margin="{StaticResource ControlMargin}"
-                        HorizontalAlignment="Center"
-                        Orientation="Horizontal">
-            <ToggleButton Width="48"
-                              Height="48"
-                              Margin="4"
-                              Foreground="{DynamicResource MahApps.Brushes.Progress}"
-                              Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}"
-                              Command="{Binding ServerStartStopCommand, Mode=OneWay}"
-                              IsChecked="{Binding IsServerStartChecked, Mode=TwoWay}">
-                <ToggleButton.ContentTemplate>
-                    <DataTemplate>
-                        <iconPacks:PackIconModern Width="20"
-                                                  Height="20"
-                                                  Kind="Server" />
-                    </DataTemplate>
-                </ToggleButton.ContentTemplate>
-            </ToggleButton>
-        </StackPanel>
+        
     </Grid>
 </UserControl>

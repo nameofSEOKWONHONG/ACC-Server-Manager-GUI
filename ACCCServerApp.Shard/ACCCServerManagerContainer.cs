@@ -25,7 +25,7 @@ namespace ACCCServerApp.Shard
 
         public ACCCServerResult Start(ACCCServerConfig acServerConfig)
         {
-            //CreateContainer(acServerConfig.Settings.ServerName);
+            CreateContainer(acServerConfig.Settings.ServerName);
             if(Containers.Count > 0)
             {
                 return new ACCCServerResult()

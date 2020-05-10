@@ -110,16 +110,7 @@
                      Controls:TextBoxHelper.Watermark="Config Version"
                      ToolTip="Check udp port"
                      Style="{DynamicResource MahApps.Styles.TextBox}"/>
-            <GroupBox
-                    Margin="4 2"
-                    Header="Sessions">
-                <StackPanel>
-                    <Button HorizontalAlignment="Stretch"
-                            Click="AddSessionClick"
-                            >Click
-                    </Button>
-                </StackPanel>
-            </GroupBox>
+            
         </StackPanel>
 
     </Grid>

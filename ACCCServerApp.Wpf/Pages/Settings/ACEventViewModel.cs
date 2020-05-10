@@ -9,7 +9,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
@@ -33,26 +35,12 @@ namespace ACCCServerApp.Wpf.Pages
         public IEnumerable<KeyValueSimpleModel> SessionTypes { get; } = ACCCServerDatum.SessionType;
         #endregion
 
-        public RaceTrack SelectedTrack { get; set; }
-        public RaceSession Session { get; set; } = new RaceSession();
+        public RaceTrack SelectedTrack { get; set; } = ACCCServerDatum.TrackList.ToList()[0];
 
         public Event EventItem { get; set; } = new Event();
 
-        private List<RaceSession> _sessions = new List<RaceSession>();
-        public List<RaceSession> Sessions
-        {
-            get
-            {
-                return EventItem.Sessions;
-            }
-            set
-            {
-                EventItem.Sessions = value;
-                OnPropertyChanged("Sessions");
-            }
-        }
-
         public ICommand TrackDropDownMenuItemCommand { get; set; }
+
         public ICommand SessionSaveCommand { get; set; }
 
         public ACEventViewModel(IDialogCoordinator dialogCoordinator)
@@ -69,6 +57,12 @@ namespace ACCCServerApp.Wpf.Pages
                     }
                 }
             );
+            System.Timers.Timer timer = new System.Timers.Timer(100);
+            timer.Elapsed += (s, e) =>
+            {
+                ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>().SelectedTrack = this.SelectedTrack;
+            };
+            timer.Start();
         }
 
         public void Dispose()
