@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ACCCServerApp.Shard\ACCCServerApp.Shard.csproj" />
+    <ProjectReference Include="..\ACCCServerApp.Shard\ACCServerApp.Shard.csproj" />
   </ItemGroup>
 
   <ItemGroup>

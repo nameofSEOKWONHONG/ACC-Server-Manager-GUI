@@ -1,4 +1,4 @@
-﻿using ACCCServerApp.Shard;
+﻿using ACCServerApp.Shard;
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace ACCCServerApp.Wpf.Core
+namespace ACCServerApp.Wpf.Core
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

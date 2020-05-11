@@ -1,6 +1,6 @@
-﻿using ACCCServerApp.Shard;
-using ACCCServerApp.Shard.Models;
-using ACCCServerApp.Wpf.Core;
+﻿using ACCServerApp.Shard;
+using ACCServerApp.Shard.Models;
+using ACCServerApp.Wpf.Core;
 using JDotnetExtension;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
@@ -16,7 +16,7 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace ACCCServerApp.Wpf.Pages
+namespace ACCServerApp.Wpf.Pages
 {
     public class ACEventViewModel : ViewModelBase, IDataErrorInfo, IDisposable
     {
@@ -30,12 +30,12 @@ namespace ACCCServerApp.Wpf.Pages
         private readonly IDialogCoordinator _dialogCoordinator;
 
         #region [readonly itemsource]
-        public IEnumerable<RaceTrack> TrackList { get; } = ACCCServerDatum.TrackList;
-        public IEnumerable<KeyValueSimpleModel> DayOfWeekens { get; } = ACCCServerDatum.DayOfWeeken;
-        public IEnumerable<KeyValueSimpleModel> SessionTypes { get; } = ACCCServerDatum.SessionType;
+        public IEnumerable<RaceTrack> TrackList { get; } = ACCServerDatum.TrackList;
+        public IEnumerable<KeyValueSimpleModel> DayOfWeekens { get; } = ACCServerDatum.DayOfWeeken;
+        public IEnumerable<KeyValueSimpleModel> SessionTypes { get; } = ACCServerDatum.SessionType;
         #endregion
 
-        public RaceTrack SelectedTrack { get; set; } = ACCCServerDatum.TrackList.ToList()[0];
+        public RaceTrack SelectedTrack { get; set; } = ACCServerDatum.TrackList.ToList()[0];
 
         public Event EventItem { get; set; } = new Event();
 

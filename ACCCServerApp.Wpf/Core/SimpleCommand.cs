@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace ACCCServerApp.Wpf.Core
+namespace ACCServerApp.Wpf.Core
 {
     public class SimpleCommand : ICommand
     {

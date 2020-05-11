@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ACCCServerApp.Shard.Models
+namespace ACCServerApp.Shard.Models
 {
     public class Settings
     {

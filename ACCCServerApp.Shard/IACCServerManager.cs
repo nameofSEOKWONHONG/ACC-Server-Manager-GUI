@@ -1,13 +1,13 @@
-﻿using ACCCServerApp.Shard.Models;
+﻿using ACCServerApp.Shard.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACCCServerApp.Shard
+namespace ACCServerApp.Shard
 {
-    public interface IACCCServerManager
+    public interface IACCServerManager
     {
         ACCCServerResult Start();
         ACCCServerResult Stop();

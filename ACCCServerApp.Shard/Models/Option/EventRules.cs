@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ACCCServerApp.Shard.Models.Option
+namespace ACCServerApp.Shard.Models.Option
 {
     public class EventRules
     {

@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACCCServerApp.Winform", "ACCCServerApp.Winform\ACCCServerApp.Winform.csproj", "{0245EEFE-24B2-45B8-B899-D11D8F7E0B56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCCServerApp.Shard", "ACCCServerApp.Shard\ACCCServerApp.Shard.csproj", "{0B781E02-D82D-4B61-ABF6-6407CC68AC35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCServerApp.Shard", "ACCCServerApp.Shard\ACCServerApp.Shard.csproj", "{0B781E02-D82D-4B61-ABF6-6407CC68AC35}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCCServerApp.Test", "ACCCServerApp.Test\ACCCServerApp.Test.csproj", "{9CBC66F2-2D25-4215-829D-AF236560A6FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCServerApp.Test", "ACCCServerApp.Test\ACCServerApp.Test.csproj", "{9CBC66F2-2D25-4215-829D-AF236560A6FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCCServerApp.Wpf", "ACCCServerApp.Wpf\ACCCServerApp.Wpf.csproj", "{09EBB9A2-D96C-4D29-9DE4-6DA14467305C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCServerApp.Wpf", "ACCCServerApp.Wpf\ACCServerApp.Wpf.csproj", "{09EBB9A2-D96C-4D29-9DE4-6DA14467305C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Library", "External Library", "{A1B058FC-C034-49BB-934D-2BD0D23267A4}"
 EndProject

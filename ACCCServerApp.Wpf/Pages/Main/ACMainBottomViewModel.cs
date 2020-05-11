@@ -1,5 +1,5 @@
-﻿using ACCCServerApp.Shard;
-using ACCCServerApp.Wpf.Core;
+﻿using ACCServerApp.Shard;
+using ACCServerApp.Wpf.Core;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace ACCCServerApp.Wpf.Pages
+namespace ACCServerApp.Wpf.Pages
 {
     public class ACMainBottomViewModel : ViewModelBase, IDataErrorInfo, IDisposable
     {
@@ -37,7 +37,7 @@ namespace ACCCServerApp.Wpf.Pages
                 async x =>
                 {
                     ViewModelContainer.Instance.GetInstance<MainWindowViewModel>().IsChecked = true;
-                    var serverContainer = new ACCCServerManagerContainer();
+                    var serverContainer = new ACCServerManagerContainer();
                     if (IsServerStartChecked)
                     {
                         var msg = string.Empty;

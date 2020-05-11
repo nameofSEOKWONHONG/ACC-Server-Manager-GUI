@@ -1,4 +1,4 @@
-﻿using ACCCServerApp.Shard.Models;
+﻿using ACCServerApp.Shard.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACCCServerApp.Shard
+namespace ACCServerApp.Shard
 {
     /// <summary>
     /// ACCC SERVER CONFIGURATION DATASET CLASS
     /// </summary>
-    public class ACCCServerDatum
+    public class ACCServerDatum
     {
         /// <summary>
         /// TRACK LIST (IMPORT DLC TRACKS)

@@ -1,11 +1,10 @@
-﻿using SharpDX.Direct2D1.Effects;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace ACCCServerApp.Shard.Models
+namespace ACCServerApp.Shard.Models
 {
     public partial class RaceTrack
     {

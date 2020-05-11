@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ACCCServerApp.Shard
+namespace ACCServerApp.Shard
 {
     public class LanguageResource
     {

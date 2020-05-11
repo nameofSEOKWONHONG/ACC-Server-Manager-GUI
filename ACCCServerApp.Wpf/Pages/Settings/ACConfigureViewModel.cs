@@ -1,5 +1,5 @@
-﻿using ACCCServerApp.Shard.Utils;
-using ACCCServerApp.Wpf.Core;
+﻿using ACCServerApp.Shard.Utils;
+using ACCServerApp.Wpf.Core;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace ACCCServerApp.Wpf.Pages
+namespace ACCServerApp.Wpf.Pages
 {
     public class ACConfigureViewModel : ViewModelBase, IDataErrorInfo, IDisposable
     {
@@ -29,7 +29,7 @@ namespace ACCCServerApp.Wpf.Pages
 
         private readonly IDialogCoordinator _dialogCoordinator;
 
-        public ACCCServerApp.Shard.Models.Configuration Configuration { get; set; } = new Shard.Models.Configuration();
+        public ACCServerApp.Shard.Models.Configuration Configuration { get; set; } = new Shard.Models.Configuration();
 
         public ACConfigureViewModel(IDialogCoordinator dialogCoordinator)
         {

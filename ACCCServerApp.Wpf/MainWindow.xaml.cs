@@ -1,5 +1,5 @@
-﻿using ACCCServerApp.Shard;
-using ACCCServerApp.Wpf.Pages;
+﻿using ACCServerApp.Shard;
+using ACCServerApp.Wpf.Pages;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ACCCServerApp.Wpf
+namespace ACCServerApp.Wpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

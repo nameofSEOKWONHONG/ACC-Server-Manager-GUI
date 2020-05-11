@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace ACCCServerApp.Shard
+namespace ACCServerApp.Shard
 {
     public class LanguageHandler
     {

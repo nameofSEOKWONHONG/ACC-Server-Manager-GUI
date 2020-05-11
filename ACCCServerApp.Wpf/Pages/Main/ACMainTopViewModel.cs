@@ -1,18 +1,18 @@
-﻿using ACCCServerApp.Shard;
-using ACCCServerApp.Shard.Models;
-using ACCCServerApp.Wpf.Core;
+﻿using ACCServerApp.Shard;
+using ACCServerApp.Shard.Models;
+using ACCServerApp.Wpf.Core;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using SharpDX.Direct2D1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 
-namespace ACCCServerApp.Wpf.Pages
+namespace ACCServerApp.Wpf.Pages
 {
     public class ACMainTopViewModel : ViewModelBase, IDataErrorInfo, IDisposable
     {
@@ -71,21 +71,24 @@ namespace ACCCServerApp.Wpf.Pages
         public bool IsServerStartChecked { get; set; } = false;
 
         public ICommand ServerStartStopCommand { get; set; }
+
         public ACMainTopViewModel(IDialogCoordinator dialogCoordinator)
         {
             this._dialogCoordinator = dialogCoordinator;
+
+            
 
             this.ServerStartStopCommand = new SimpleCommand(
                 o => true,
                 async x =>
                 {
                     ViewModelContainer.Instance.GetInstance<MainWindowViewModel>().IsChecked = true;
-                    var serverContainer = new ACCCServerManagerContainer();
+                    var serverContainer = new ACCServerManagerContainer();
                     if (IsServerStartChecked)
                     {
                         var msg = string.Empty;
 
-                        ACCCServerConfig config = new ACCCServerConfig();
+                        ACCServerConfig config = new ACCServerConfig();
                         this.SelectedEvent.Sessions = this.SelectedRaceSessions.ToList();
 
                         config.Configuration = this.SelectedConfiguration;
@@ -121,6 +124,15 @@ namespace ACCCServerApp.Wpf.Pages
 
                     ViewModelContainer.Instance.GetInstance<MainWindowViewModel>().IsChecked = IsServerStartChecked;
                 });
+
+            System.Timers.Timer timer = new System.Timers.Timer(2000);
+            timer.Elapsed += (s, e) =>
+            {
+                this.SelectedConfiguration = ViewModelContainer.Instance.GetInstance<ACConfigureViewModel>().Configuration;
+                this.SelectedEvent = ViewModelContainer.Instance.GetInstance<ACEventViewModel>().EventItem;
+                this.SelectedSettings = ViewModelContainer.Instance.GetInstance<ACSettingsViewModel>().Settings;
+            };
+            timer.Start();            
         }
 
         public void Dispose()

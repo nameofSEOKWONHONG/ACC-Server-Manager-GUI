@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ACCCServerApp.Shard.Models
+namespace ACCServerApp.Shard.Models
 {
-    public class ACCCServerConfig
+    public class ACCServerConfig
     {
         public Configuration Configuration { get; set; }
         public Event Event { get; set; }
         public Settings Settings { get; set; }
         public AssistRules AssistRules { get; set; }
 
-        public class Validator : AbstractValidator<ACCCServerConfig>
+        public class Validator : AbstractValidator<ACCServerConfig>
         {
             public Validator()
             {

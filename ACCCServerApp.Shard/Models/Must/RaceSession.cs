@@ -5,7 +5,7 @@ using System.Text;
 
 using JDotnetExtension;
 
-namespace ACCCServerApp.Shard.Models
+namespace ACCServerApp.Shard.Models
 {
     public partial class RaceSession
     {
@@ -22,9 +22,9 @@ namespace ACCCServerApp.Shard.Models
                 RuleFor(m => m.HourOfDay).GreaterThanOrEqualTo(0).LessThanOrEqualTo(23);
                 RuleFor(m => m.DayOfWeekend).GreaterThanOrEqualTo(1).LessThanOrEqualTo(3);
                 RuleFor(m => m.TimeMultiplier).GreaterThanOrEqualTo(0).LessThanOrEqualTo(24);
-                RuleFor(m => m.SessionType).Must((sessionType) => sessionType == ACCCServerDatum.SESSION_TYPES.PRACETICE.ToDescription() || 
-                                                                  sessionType == ACCCServerDatum.SESSION_TYPES.QUALIFYING.ToDescription() || 
-                                                                  sessionType == ACCCServerDatum.SESSION_TYPES.RACE.ToDescription());
+                RuleFor(m => m.SessionType).Must((sessionType) => sessionType == ACCServerDatum.SESSION_TYPES.PRACETICE.ToDescription() || 
+                                                                  sessionType == ACCServerDatum.SESSION_TYPES.QUALIFYING.ToDescription() || 
+                                                                  sessionType == ACCServerDatum.SESSION_TYPES.RACE.ToDescription());
                 RuleFor(m => m.SessionDurationMinutes).LessThanOrEqualTo(30);
             }
         }

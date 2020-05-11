@@ -1,9 +1,9 @@
-﻿using ACCCServerApp.Shard;
-using ACCCServerApp.Shard.Utils;
+﻿using ACCServerApp.Shard;
+using ACCServerApp.Shard.Utils;
 using System;
 using System.Diagnostics;
 
-namespace ACCCServerApp.Test
+namespace ACCServerApp.Test
 {
     class Program
     {
@@ -47,8 +47,8 @@ namespace ACCCServerApp.Test
             ////NetworkHelper.OpenPort()
             //NetworkHelper.DisableFirewall();
 
-            ACCCServerManagerContainer aCCCServerManagerContainer = new ACCCServerManagerContainer();
-            var config = new Shard.Models.ACCCServerConfig()
+            ACCServerManagerContainer aCCCServerManagerContainer = new ACCServerManagerContainer();
+            var config = new Shard.Models.ACCServerConfig()
             {
                 Configuration = null,
                 Event = null,

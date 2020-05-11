@@ -1,4 +1,4 @@
-﻿using ACCCServerApp.Shard.Models;
+﻿using ACCServerApp.Shard.Models;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ACCCServerApp.Wpf.Pages
+namespace ACCServerApp.Wpf.Pages
 {
     /// <summary>
     /// ACEvent.xaml에 대한 상호 작용 논리

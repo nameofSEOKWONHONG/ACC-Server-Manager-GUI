@@ -1,8 +1,8 @@
-﻿<Controls:MetroWindow x:Class="ACCCServerApp.Wpf.MainWindow"
+﻿<Controls:MetroWindow x:Class="ACCServerApp.Wpf.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:ACCCServerApp.Wpf"
-        xmlns:pages="clr-namespace:ACCCServerApp.Wpf.Pages"
+        xmlns:local="clr-namespace:ACCServerApp.Wpf"
+        xmlns:pages="clr-namespace:ACCServerApp.Wpf.Pages"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -34,8 +34,8 @@
                                   Kind="SolidSave" />
                 <Button.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="Save" Click="SaveClickEvent"/>
-                        <MenuItem Header="Load" Click="LoadClickEvent"/>
+                        <MenuItem Header="Save" Command="{Binding ConfigSaveCommand}"/>
+                        <MenuItem Header="Load" Command="{Binding ConfigLoadCommand}"/>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>

@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 
-namespace ACCCServerApp.Shard.Utils
+namespace ACCServerApp.Shard.Utils
 {
     public class NetworkHelper
     {

@@ -1,5 +1,5 @@
-﻿using ACCCServerApp.Shard.Models;
-using ACCCServerApp.Wpf.Core;
+﻿using ACCServerApp.Shard.Models;
+using ACCServerApp.Wpf.Core;
 using JDotnetExtension;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls.Dialogs;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Timers;
 using System.Windows.Input;
 
-namespace ACCCServerApp.Wpf.Pages
+namespace ACCServerApp.Wpf.Pages
 {
     public class ACSessionViewModel : ViewModelBase, IDataErrorInfo, IDisposable
     {
@@ -33,31 +33,31 @@ namespace ACCCServerApp.Wpf.Pages
         {
             new RaceSession()
             {
-                GroupHeader = Shard.ACCCServerDatum.SESSION_TYPES.PRACETICE.ToString(),
+                GroupHeader = Shard.ACCServerDatum.SESSION_TYPES.PRACETICE.ToString(),
                 UseYN = true,
                 HourOfDay = 13,
-                DayOfWeekend = (int)Shard.ACCCServerDatum.DAY_OF_WEEKEND_TYPES.FRIDAY,
-                SessionType = Shard.ACCCServerDatum.SESSION_TYPES.PRACETICE.ToDescription(),
+                DayOfWeekend = (int)Shard.ACCServerDatum.DAY_OF_WEEKEND_TYPES.FRIDAY,
+                SessionType = Shard.ACCServerDatum.SESSION_TYPES.PRACETICE.ToDescription(),
                 SessionDurationMinutes = 60,
                 TimeMultiplier = 1,
             },
             new RaceSession()
             {
-                GroupHeader = Shard.ACCCServerDatum.SESSION_TYPES.QUALIFYING.ToString(),
+                GroupHeader = Shard.ACCServerDatum.SESSION_TYPES.QUALIFYING.ToString(),
                 UseYN = true,
                 HourOfDay = 14,
-                DayOfWeekend = (int)Shard.ACCCServerDatum.DAY_OF_WEEKEND_TYPES.SATURDAY,
-                SessionType = Shard.ACCCServerDatum.SESSION_TYPES.QUALIFYING.ToDescription(),
+                DayOfWeekend = (int)Shard.ACCServerDatum.DAY_OF_WEEKEND_TYPES.SATURDAY,
+                SessionType = Shard.ACCServerDatum.SESSION_TYPES.QUALIFYING.ToDescription(),
                 SessionDurationMinutes = 20,
                 TimeMultiplier = 1,
             },
             new RaceSession()
             {
-                GroupHeader = Shard.ACCCServerDatum.SESSION_TYPES.RACE.ToString(),
+                GroupHeader = Shard.ACCServerDatum.SESSION_TYPES.RACE.ToString(),
                 UseYN = true,
                 HourOfDay = 14,
-                DayOfWeekend = (int)Shard.ACCCServerDatum.DAY_OF_WEEKEND_TYPES.SUNDAY,
-                SessionType = Shard.ACCCServerDatum.SESSION_TYPES.RACE.ToDescription(),
+                DayOfWeekend = (int)Shard.ACCServerDatum.DAY_OF_WEEKEND_TYPES.SUNDAY,
+                SessionType = Shard.ACCServerDatum.SESSION_TYPES.RACE.ToDescription(),
                 SessionDurationMinutes = 60,
                 TimeMultiplier = 1,
             }

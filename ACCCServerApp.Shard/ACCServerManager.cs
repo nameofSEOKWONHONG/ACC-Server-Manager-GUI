@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ACCCServerApp.Shard.Models;
+using ACCServerApp.Shard.Models;
 using FluentValidation;
+using JDotnetExtension;
 using Newtonsoft.Json;
 
-namespace ACCCServerApp.Shard
+namespace ACCServerApp.Shard
 {
     //accc server wiki : https://www.acc-wiki.info/wiki/Server_Configuration
 
     /// <summary>
     /// ACCC SERVER MANAGER CLASS
     /// </summary>
-    public class ACCCServerManager : IACCCServerManager
+    public class ACCServerManager : IACCServerManager
     {
-        public ACCCServerConfig ACServerConfig { get; private set; }
+        public ACCServerConfig ACServerConfig { get; private set; }
         public string ServerName { get; set; }
 
         /// <summary>
@@ -31,7 +32,7 @@ namespace ACCCServerApp.Shard
         private ProcessHandler _processHandler;
 
         #region [constructor]
-        public ACCCServerManager(ACCCServerConfig aCCCServerConfig)
+        public ACCServerManager(ACCServerConfig aCCCServerConfig)
         {
             this.ACServerConfig = aCCCServerConfig;
             ServerName = this.ACServerConfig.Settings.ServerName;
@@ -115,12 +116,14 @@ namespace ACCCServerApp.Shard
         }
         #endregion
 
+        
+
         #region [Validator]
-        public class ACCCServerManagerValidator : AbstractValidator<ACCCServerManager>
+        public class ACCCServerManagerValidator : AbstractValidator<ACCServerManager>
         {
             public ACCCServerManagerValidator()
             {
-                SettingsValidator();
+                RuleFor(m => m.ACServerConfig.Settings.AdminPassword).NotEmpty();
             }
 
             private bool SettingsValidator()

@@ -1,29 +1,29 @@
 ﻿#define __LITE_VERSION__
 
-using ACCCServerApp.Shard.Models;
+using ACCServerApp.Shard.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ACCCServerApp.Shard
+namespace ACCServerApp.Shard
 {
     /// <summary>
     /// ACCC Server Container (for create multiple server session)
     /// </summary>
-    public class ACCCServerManagerContainer
+    public class ACCServerManagerContainer
     {
-        public static readonly Dictionary<string, IACCCServerManager> Containers = new Dictionary<string, IACCCServerManager>();
+        public static readonly Dictionary<string, IACCServerManager> Containers = new Dictionary<string, IACCServerManager>();
         public readonly string ServerFilePath = "./server";
         public readonly string ContainerFilePath = "./containers";
 
-        public ACCCServerManagerContainer()
+        public ACCServerManagerContainer()
         {
 
         }
 
-        public ACCCServerResult Start(ACCCServerConfig acServerConfig)
+        public ACCCServerResult Start(ACCServerConfig acServerConfig)
         {
             CreateContainer(acServerConfig.Settings.ServerName);
             if(Containers.Count > 0)
@@ -34,14 +34,14 @@ namespace ACCCServerApp.Shard
                     Message = "No support normal version, plz buy pro version."
                 };
             }
-            IACCCServerManager serverManager = new ACCCServerManager(acServerConfig);
+            IACCServerManager serverManager = new ACCServerManager(acServerConfig);
             Containers.Add(acServerConfig.Settings.ServerName, serverManager);
             return serverManager.Start();
         }
 
         public ACCCServerResult Stop(string serverName)
         {
-            var server = Containers.Where(m => m.Key == serverName).First().Value as IACCCServerManager;
+            var server = Containers.Where(m => m.Key == serverName).First().Value as IACCServerManager;
             return server.Stop();
         }
 

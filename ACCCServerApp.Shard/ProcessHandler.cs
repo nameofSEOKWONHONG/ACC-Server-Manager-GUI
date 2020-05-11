@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACCCServerApp.Shard
+namespace ACCServerApp.Shard
 {
     /// <summary>
     /// process manage for accc server process instance

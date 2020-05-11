@@ -1,12 +1,12 @@
-﻿using ACCCServerApp.Wpf.Core;
-using ACCCServerApp.Wpf.Pages;
+﻿using ACCServerApp.Wpf.Core;
+using ACCServerApp.Wpf.Pages;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ACCCServerApp.Wpf
+namespace ACCServerApp.Wpf
 {
     public class ViewModelContainer
     {
