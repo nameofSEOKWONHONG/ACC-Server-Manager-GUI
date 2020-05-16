@@ -38,6 +38,7 @@ namespace ACCServerApp.Shard
             _executor.StartInfo.StandardOutputEncoding = Encoding.UTF8;
             _executor.StartInfo.StandardErrorEncoding = Encoding.UTF8;
             _executor.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            _executor.EnableRaisingEvents = true;
 
             _executor.StartInfo.RedirectStandardOutput = true;
             _executor.StartInfo.RedirectStandardInput = true;
@@ -48,7 +49,7 @@ namespace ACCServerApp.Shard
 
             _executor.OutputDataReceived += (s, e) => _outputReceived(e.Data);
             _executor.ErrorDataReceived += (s, e) => _errorReceived(e.Data);
-
+            
             return this;
         }
 
@@ -66,26 +67,23 @@ namespace ACCServerApp.Shard
         {
             if (_executor != null)
             {
+                _executor.StandardInput.Close();
+
                 _executor.OutputDataReceived -= (s, e) => _outputReceived(e.Data);
                 _executor.ErrorDataReceived -= (s, e) => _errorReceived(e.Data);
 
-                _executor.StandardInput.Close();
-
-                _executor.Kill();
+                _executor.CloseMainWindow();
                 _executor.Close();
+                _executor.WaitForExit();
             }
 
-            try
+            var processes = Process.GetProcesses();
+            foreach(var process in processes)
             {
-                if (!_executor.HasExited)
+                if (process.ProcessName.Contains("accServer.exe"))
                 {
-                    _executor.StandardInput.Close();
-                    _executor.Kill();
+                    process.Kill();
                 }
-            }
-            finally
-            {
-                _executor = null;
             }
         }
     }

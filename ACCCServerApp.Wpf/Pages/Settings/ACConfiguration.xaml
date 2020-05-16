@@ -50,7 +50,7 @@
                      Controls:TextBoxHelper.Watermark="UDP PORT"
                      ToolTip="{Binding LanguageResource.CHK_UDP_PORT}"
                      Style="{DynamicResource MahApps.Styles.TextBox.Button}"
-                     x:Name="UDP" Text="{Binding Configuration.UdpPort, Mode=TwoWay}">
+                     x:Name="UDP" Text="{Binding Configuration.UDPPort, Mode=TwoWay}">
             </TextBox>
             <TextBox Margin="{StaticResource ControlMargin}"
                     HorizontalContentAlignment="Stretch"
@@ -61,7 +61,7 @@
                     SpellCheck.IsEnabled="True"
                     ToolTip="{Binding LanguageResource.CHK_TCP_PORT}"
                     Style="{DynamicResource MahApps.Styles.TextBox.Button}"
-                    x:Name="TCP" Text="{Binding Configuration.TcpPort, Mode=TwoWay}">
+                    x:Name="TCP" Text="{Binding Configuration.TCPPort, Mode=TwoWay}">
             </TextBox>
             <TextBox Margin="{StaticResource ControlMargin}"
                              HorizontalContentAlignment="Stretch"

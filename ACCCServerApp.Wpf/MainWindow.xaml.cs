@@ -1,5 +1,6 @@
 ﻿using ACCServerApp.Shard;
 using ACCServerApp.Wpf.Pages;
+using JDotnetExtension;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -32,6 +33,17 @@ namespace ACCServerApp.Wpf
             DataContext = _viewModel;
 
             InitializeComponent();
+
+            Closed += (s, e) =>
+            {
+                var procs = Process.GetProcesses();
+                var proc = procs.Where(p => p.ProcessName.Contains("accServer")).FirstOrDefault();
+                if (proc.jIsNotNull())
+                {
+                    proc.Kill();
+                    proc.WaitForExit();
+                }
+            };
         }
 
         private void SaveClickEvent(object sender, RoutedEventArgs e)

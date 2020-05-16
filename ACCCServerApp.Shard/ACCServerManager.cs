@@ -35,31 +35,8 @@ namespace ACCServerApp.Shard
         public ACCServerManager(ACCServerConfig aCCCServerConfig)
         {
             this.ACServerConfig = aCCCServerConfig;
-            ServerName = this.ACServerConfig.Settings.ServerName;
-
-            var configurationJson = File.ReadAllText(Path.Combine("./containers/" + this.ACServerConfig.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(ACServerConfig.Configuration)).First().Value));
-            var eventJson = File.ReadAllText(Path.Combine("./containers/" + this.ACServerConfig.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(ACServerConfig.Event)).First().Value));
-            var settingsJson = File.ReadAllText(Path.Combine("./containers/" + this.ACServerConfig.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(ACServerConfig.Settings)).First().Value));
-            var assisRulesJson = File.ReadAllText(Path.Combine("./containers/" + this.ACServerConfig.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(ACServerConfig.AssistRules)).First().Value));
-
-            if(ACServerConfig.Configuration == null)
-            {
-                ACServerConfig.Configuration = JsonConvert.DeserializeObject<Configuration>(configurationJson);
-            }
-
-            if(ACServerConfig.Event == null)
-            {
-                ACServerConfig.Event = JsonConvert.DeserializeObject<Event>(eventJson);
-            }
-
-            //if(ACServerConfig.Settings == null)
-            //{
-                ACServerConfig.Settings = JsonConvert.DeserializeObject<Settings>(settingsJson);
-            //}
-
-            ACServerConfig.AssistRules = JsonConvert.DeserializeObject<AssistRules>(assisRulesJson);
-
-            _processHandler = new ProcessHandler();
+            this.ServerName = this.ACServerConfig.Settings.ServerName;
+            this._processHandler = new ProcessHandler();
         }
         #endregion
 
@@ -76,6 +53,7 @@ namespace ACCServerApp.Shard
                 if (!results.IsValid)
                 {
                     serverResult.Message = results.Errors.First().ErrorMessage;
+                    throw new Exception(serverResult.Message);
                 }
 
                 var path1 = Path.GetFullPath($"./containers/{ServerName}/cmd.exe");
@@ -93,7 +71,7 @@ namespace ACCServerApp.Shard
             }
             catch (Exception e)
             {
-                serverResult.HasError = false;
+                
             }
 
             return serverResult;

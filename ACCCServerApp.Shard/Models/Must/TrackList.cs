@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using System.Text.Json.Serialization;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ACCServerApp.Shard.Models
@@ -15,6 +16,7 @@ namespace ACCServerApp.Shard.Models
 
     public partial class RaceTrack
     {
+        [Newtonsoft.Json.JsonIgnore]
         public string ImagePath { get; set; }
     }
 }

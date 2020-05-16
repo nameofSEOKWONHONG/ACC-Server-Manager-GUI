@@ -74,9 +74,7 @@ namespace ACCServerApp.Wpf.Pages
 
         public ACMainTopViewModel(IDialogCoordinator dialogCoordinator)
         {
-            this._dialogCoordinator = dialogCoordinator;
-
-            
+            this._dialogCoordinator = dialogCoordinator;           
 
             this.ServerStartStopCommand = new SimpleCommand(
                 o => true,
@@ -89,11 +87,11 @@ namespace ACCServerApp.Wpf.Pages
                         var msg = string.Empty;
 
                         ACCServerConfig config = new ACCServerConfig();
-                        this.SelectedEvent.Sessions = this.SelectedRaceSessions.ToList();
+                        this.SelectedEvent.Sessions = ViewModelContainer.Instance.GetInstance<ACSessionViewModel>().RaceSessions;
 
-                        config.Configuration = this.SelectedConfiguration;
-                        config.Event = this.SelectedEvent;                        
-                        config.Settings = this.SelectedSettings;
+                        config.Configuration = ViewModelContainer.Instance.GetInstance<ACConfigureViewModel>().Configuration;
+                        config.Event = ViewModelContainer.Instance.GetInstance<ACEventViewModel>().EventItem;                        
+                        config.Settings = ViewModelContainer.Instance.GetInstance<ACSettingsViewModel>().Settings;
 
                         var sResult = serverContainer.Start(config);
 
@@ -111,7 +109,8 @@ namespace ACCServerApp.Wpf.Pages
                     }
                     else
                     {
-                        var tResult = serverContainer.Stop(string.Empty);
+                        var serverName = ViewModelContainer.Instance.GetInstance<ACSettingsViewModel>().Settings.ServerName;
+                        var tResult = serverContainer.Stop(serverName);
                         if (!tResult.HasError)
                         {
                             await ((MetroWindow)Application.Current.MainWindow).ShowMessageAsync($"Server State", "Stop acccServer").ConfigureAwait(false);

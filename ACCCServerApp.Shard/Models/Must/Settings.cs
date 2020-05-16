@@ -2,18 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace ACCServerApp.Shard.Models
 {
     public class Settings
     {
         public string ServerName { get; set; } = "ACC SERVER DEFAULT";
-        public string AdminPassword { get; set; } = "";
+        public string AdminPassword { get; set; } = "administrator";
         public int TrackMedalsRequirement { get; set; } = -1;
         public int SafetyRatingRequirement { get; set; } = 60;
         public int RacecraftRatingRequirement { get; set; } = -1;
-        public string Password { get; set; } = "";
-        public string SpectatorPassword { get; set; } = "";
+        public string Password { get; set; } = "guest";
+        public string SpectatorPassword { get; set; } = "guestview";
         public int MaxCarSlots { get; set; } = 80;
         public int DumpLeaderboards { get; set; } = 1;
         public int IsRaceLocked { get; set; } = 1;

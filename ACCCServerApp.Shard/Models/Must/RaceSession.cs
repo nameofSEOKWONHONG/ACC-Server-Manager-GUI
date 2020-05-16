@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using JDotnetExtension;
+using System.Text.Json.Serialization;
 
 namespace ACCServerApp.Shard.Models
 {
@@ -14,6 +15,8 @@ namespace ACCServerApp.Shard.Models
         public int TimeMultiplier { get; set; } = 1;
         public string SessionType { get; set; }
         public int SessionDurationMinutes { get; set; } = 10;
+
+ 
 
         public class Validator : AbstractValidator<RaceSession>
         {
@@ -32,12 +35,15 @@ namespace ACCServerApp.Shard.Models
 
     public partial class RaceSession
     {
+        [Newtonsoft.Json.JsonIgnore]
         public string GroupHeader { get; set; }
         /// <summary>
         /// 세션 사용여부
         /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
         public bool UseYN { get; set; }
 
+        [Newtonsoft.Json.JsonIgnore]
         public LanguageResource LanguageResource { get; set; }
     }
 }

@@ -36,13 +36,28 @@ namespace ACCServerApp.Shard
             }
             IACCServerManager serverManager = new ACCServerManager(acServerConfig);
             Containers.Add(acServerConfig.Settings.ServerName, serverManager);
+
+            DirectoryInfo driInfo = new DirectoryInfo(this.ContainerFilePath + $"/{acServerConfig.Settings.ServerName}");
+
+            ACCServerFileManager accFileManager = new ACCServerFileManager(acServerConfig);
+            accFileManager.ConfigSave(driInfo);
+
+            if(serverManager.Start().HasError)
+            {
+                Containers.Remove(acServerConfig.Settings.ServerName);
+            }
             return serverManager.Start();
         }
 
         public ACCCServerResult Stop(string serverName)
         {
             var server = Containers.Where(m => m.Key == serverName).First().Value as IACCServerManager;
-            return server.Stop();
+            var result = server.Stop();
+            if(!result.HasError)
+            {
+                Containers.Remove(serverName);
+            }
+            return result;
         }
 
         public void CreateContainer(string serverName)
@@ -54,21 +69,24 @@ namespace ACCServerApp.Shard
 
         private void CopyAll(DirectoryInfo source, DirectoryInfo target)
         {
-            Directory.CreateDirectory(target.FullName);
-
-            // Copy each file into the new directory.
-            foreach (FileInfo fi in source.GetFiles())
+            if (!Directory.Exists(target.FullName))
             {
-                //Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
-                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
-            }
+                Directory.CreateDirectory(target.FullName);
 
-            // Copy each subdirectory using recursion.
-            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
-            {
-                DirectoryInfo nextTargetSubDir =
-                    target.CreateSubdirectory(diSourceSubDir.Name);
-                CopyAll(diSourceSubDir, nextTargetSubDir);
+                // Copy each file into the new directory.
+                foreach (FileInfo fi in source.GetFiles())
+                {
+                    //Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
+                    fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+                }
+
+                // Copy each subdirectory using recursion.
+                foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+                {
+                    DirectoryInfo nextTargetSubDir =
+                        target.CreateSubdirectory(diSourceSubDir.Name);
+                    CopyAll(diSourceSubDir, nextTargetSubDir);
+                }
             }
         }
     }

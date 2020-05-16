@@ -54,15 +54,15 @@ namespace ACCServerApp.Wpf
                 o => true,
                 async x =>
                 {
-                    var acmainTopViewModel = ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>();
-                    ACCServerConfig config = new ACCServerConfig();
-                    config.Configuration = acmainTopViewModel.SelectedConfiguration;
-                    acmainTopViewModel.SelectedEvent.Sessions = acmainTopViewModel.SelectedRaceSessions.ToList();
-                    config.Event = acmainTopViewModel.SelectedEvent;
-                    config.Settings = acmainTopViewModel.SelectedSettings;
+                    //var acmainTopViewModel = ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>();
+                    //ACCServerConfig config = new ACCServerConfig();
+                    //config.Configuration = acmainTopViewModel.SelectedConfiguration;
+                    //acmainTopViewModel.SelectedEvent.Sessions = acmainTopViewModel.SelectedRaceSessions.ToList();
+                    //config.Event = acmainTopViewModel.SelectedEvent;
+                    //config.Settings = acmainTopViewModel.SelectedSettings;
 
-                    var svrFileMgr = new ACCServerFileManager(config);
-                    svrFileMgr.ConfigSave();
+                    //var svrFileMgr = new ACCServerFileManager(config);
+                    //svrFileMgr.ConfigSave();
                 });
 
             this.ConfigLoadCommand = new SimpleCommand(
