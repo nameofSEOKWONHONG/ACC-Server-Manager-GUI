@@ -52,7 +52,8 @@ namespace ACCServerApp.Wpf.Pages
                 {
                     if(x != null)
                     {
-                        SelectedTrack = x as RaceTrack;
+                        this.SelectedTrack = (RaceTrack)x;
+                        this.EventItem.Tracks = this.SelectedTrack.Value;
                         ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>().SelectedTrack = this.SelectedTrack;
                     }
                 }

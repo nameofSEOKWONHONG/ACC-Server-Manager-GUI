@@ -1,6 +1,8 @@
-﻿using System;
+﻿using JDotnetExtension;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,7 +48,6 @@ namespace ACCServerApp.Shard
             _executor.StartInfo.WorkingDirectory = workingDir;
             _executor.EnableRaisingEvents = true;
 
-
             _executor.OutputDataReceived += (s, e) => _outputReceived(e.Data);
             _executor.ErrorDataReceived += (s, e) => _errorReceived(e.Data);
             
@@ -57,10 +58,11 @@ namespace ACCServerApp.Shard
         {
             if (!_executor.Start())
             {
+                _executor.BeginOutputReadLine();
+                _executor.BeginErrorReadLine();
+                _executor.WaitForExit();
                 throw new InvalidOperationException("Could not start process");
             }
-            _executor.BeginOutputReadLine();
-            _executor.BeginErrorReadLine();
         }
 
         public void Stop()
@@ -74,16 +76,6 @@ namespace ACCServerApp.Shard
 
                 _executor.CloseMainWindow();
                 _executor.Close();
-                _executor.WaitForExit();
-            }
-
-            var processes = Process.GetProcesses();
-            foreach(var process in processes)
-            {
-                if (process.ProcessName.Contains("accServer.exe"))
-                {
-                    process.Kill();
-                }
             }
         }
     }
@@ -127,8 +119,42 @@ namespace ACCServerApp.Shard
 
             process.BeginOutputReadLine();
             process.BeginErrorReadLine();
+            process.WaitForExit();
 
             return tcs.Task;
+        }
+    }
+
+    public class ProcessSimpleHandler
+    {
+        readonly string ProcessName = "accServer";
+        readonly string ProcessName2 = "accServer.exe";
+        readonly string[] CheckProcessNames = new[]
+        {
+            "accServer", "accServer.exe", "cmd", "cmd.exe"
+        };
+        public void Run(string fileName, string args, string workingDir)
+        {
+            var proc = new Process();
+            proc.StartInfo = new ProcessStartInfo();
+            proc.StartInfo.FileName = "cmd";
+            proc.StartInfo.Arguments = string.Format("/{0} {1}", "k", fileName, args);
+            //proc.StartInfo.CreateNoWindow = true;
+            //proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.WorkingDirectory = workingDir;
+            proc.Start();
+            //Process.Start("cmd", string.Format("/{0} {1}", "k", fileName, args));
+        }
+
+        public void Stop()
+        {
+            var procs = Process.GetProcesses();
+            var exist = procs.Where(p => CheckProcessNames.Where(m => m == p.ProcessName).FirstOrDefault().jIsNotNull()).ToList();
+            foreach(var proc in exist)
+            {
+                proc.CloseMainWindow();
+                proc.Close();
+            }
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,19 +8,38 @@ namespace ACCServerApp.Shard.Models
 {
     public class Event
     {
+        [JsonProperty("track")]
         public string Tracks { get; set; } = "mount_panorama_2019";
+
+        [JsonProperty("eventType")]
+        public string EventType { get; set; } = "E_6h";
+
+        [JsonProperty("preRaceWaitingTimeSeconds")]
         public int PreRaceWaitingTimeSeconds { get; set; } = 80;
+
+        [JsonProperty("postQualySeconds")]
+        public int PostQualySeconds { get; set; } = 30;
+
+        [JsonProperty("postRaceSeconds")] 
+        public int PostRaceSeconds { get; set; } = 15;
+
+        [JsonProperty("sessionOverTimeSeconds")]
         public int SessionOverTimeSeconds { get; set; } = 120;
 
+        [JsonProperty("ambientTemp")]
         public int AmbientTemp { get; set; } = 22;
 
+        [JsonProperty("trackTemp")]
+        public int trackTemp { get; set; } = 26;
+
+        [JsonProperty("cloudLevel")]
         public double CloudLevel { get; set; } = 0.1;
 
+        [JsonProperty("rain")]
         public double Rain { get; set; } = 0.0;
 
+        [JsonProperty("weatherRandomness")]
         public int WeatherRandomness { get; set; } = 1;
-
-        public int PostQualySeconds { get; set; } = 30;
 
         #region [Experimental, Not Support Yet]
         //public string MetaData { get; set; }
@@ -27,8 +47,10 @@ namespace ACCServerApp.Shard.Models
         //public string IsFixedConditionQualification { get; set; }
         #endregion
 
+        [JsonProperty("sessions")]
         public List<RaceSession> Sessions { get; set; } = new List<RaceSession>();
 
+        [JsonProperty("configVersion")]
         public int ConfigVersion { get; set; } = 1;
 
         public class Validator : AbstractValidator<Event>

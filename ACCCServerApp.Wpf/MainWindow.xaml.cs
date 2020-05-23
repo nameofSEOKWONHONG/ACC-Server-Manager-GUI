@@ -36,13 +36,8 @@ namespace ACCServerApp.Wpf
 
             Closed += (s, e) =>
             {
-                var procs = Process.GetProcesses();
-                var proc = procs.Where(p => p.ProcessName.Contains("accServer")).FirstOrDefault();
-                if (proc.jIsNotNull())
-                {
-                    proc.Kill();
-                    proc.WaitForExit();
-                }
+                var procHandler = new ProcessSimpleHandler();
+                procHandler.Stop();
             };
         }
 

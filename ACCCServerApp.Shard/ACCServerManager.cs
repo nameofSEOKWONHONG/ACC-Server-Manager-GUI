@@ -29,14 +29,12 @@ namespace ACCServerApp.Shard
             {"Settings", "cfg/settings.json" },
             {"AssistRules", "cfg/assistRules.json" }
         };
-        private ProcessHandler _processHandler;
 
         #region [constructor]
         public ACCServerManager(ACCServerConfig aCCCServerConfig)
         {
             this.ACServerConfig = aCCCServerConfig;
             this.ServerName = this.ACServerConfig.Settings.ServerName;
-            this._processHandler = new ProcessHandler();
         }
         #endregion
 
@@ -59,19 +57,13 @@ namespace ACCServerApp.Shard
                 var path1 = Path.GetFullPath($"./containers/{ServerName}/cmd.exe");
                 var path = Path.GetFullPath($"./containers/{ServerName}/accServer.exe");
 
-                _processHandler.CreateProcess(path, "", $"./containers/{ServerName}",
-                    (output) =>
-                    {
-                        Console.WriteLine(output);
-                    },
-                    (error) =>
-                    {
-                        Console.WriteLine(error);
-                    }).Run();
+                var procHandler = new ProcessSimpleHandler();
+                procHandler.Run(path, "", $"./containers/{ServerName}");
             }
             catch (Exception e)
             {
-                
+                serverResult.HasError = true;
+                serverResult.Message = e.Message;
             }
 
             return serverResult;
@@ -82,7 +74,8 @@ namespace ACCServerApp.Shard
             var serverResult = new ACCCServerResult();
             try
             {
-                _processHandler.Stop();
+                var procHandler = new ProcessSimpleHandler();
+                procHandler.Stop();
             }
             catch(Exception e)
             {

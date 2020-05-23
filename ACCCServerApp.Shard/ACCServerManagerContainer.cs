@@ -42,11 +42,12 @@ namespace ACCServerApp.Shard
             ACCServerFileManager accFileManager = new ACCServerFileManager(acServerConfig);
             accFileManager.ConfigSave(driInfo);
 
-            if(serverManager.Start().HasError)
+            var serverResult = serverManager.Start();
+            if(serverResult.HasError)
             {
                 Containers.Remove(acServerConfig.Settings.ServerName);
             }
-            return serverManager.Start();
+            return serverResult;
         }
 
         public ACCCServerResult Stop(string serverName)

@@ -22,17 +22,11 @@ namespace ACCServerApp.Wpf.Pages
     public partial class ACEvent : UserControl
     {
         private readonly ACEventViewModel _viewModel;
-        private readonly CustomDialog _dialog = null;
         public ACEvent()
         {
             _viewModel = ViewModelContainer.Instance.GetInstance<ACEventViewModel>();
             DataContext = _viewModel;
             InitializeComponent();
-
-            if (_dialog == null)
-            {
-                _dialog = new CustomDialog(((MetroWindow)Application.Current.MainWindow).MetroDialogOptions) { Content = this.Resources["SessionDialog"], Title = "This dialog allows arbitrary content." };
-            }
         }
     }
 }

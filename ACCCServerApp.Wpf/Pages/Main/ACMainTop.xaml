@@ -22,16 +22,16 @@
             >
         </Image>
 
-        <StackPanel>
-            <Grid>
+        <Grid>
+            <!--<Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="40"></RowDefinition>
                 </Grid.RowDefinitions>
-            </Grid>
+            </Grid>-->
             <StackPanel HorizontalAlignment="Right" 
-                    VerticalAlignment="Center"
-                        Grid.Row="0">
+                  VerticalAlignment="Center"
+                  Grid.Row="0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <TextBlock Text="Track:" 
                                        HorizontalAlignment="Right" 
@@ -175,12 +175,7 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </StackPanel>
-            
-            <StackPanel Margin="{StaticResource ControlMargin}"
-                        HorizontalAlignment="Center"
-                        Orientation="Horizontal"
-                        Grid.Row="1">
-                <ToggleButton Width="88"
+            <ToggleButton Width="88"
                               Height="88"
                               Margin="4"
                               Foreground="{DynamicResource MahApps.Brushes.Progress}"
@@ -188,17 +183,25 @@
                               Command="{Binding ServerStartStopCommand, Mode=OneWay}"
                               IsChecked="{Binding IsServerStartChecked, Mode=TwoWay}"
                               ToolTip="Server Start and Stop"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
                               >
-                    <ToggleButton.ContentTemplate>
-                        <DataTemplate>
-                            <iconPacks:PackIconBoxIcons Width="40"
+                <ToggleButton.ContentTemplate>
+                    <DataTemplate>
+                        <iconPacks:PackIconBoxIcons Width="40"
                                                         Height="40"
                                                         Kind="RegularPlay" />
-                        </DataTemplate>
-                    </ToggleButton.ContentTemplate>
-                </ToggleButton>
+                    </DataTemplate>
+                </ToggleButton.ContentTemplate>
+            </ToggleButton>
+
+            <StackPanel Margin="{StaticResource ControlMargin}"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal"
+                        Grid.Row="1">
+
             </StackPanel>
-        </StackPanel>
+        </Grid>
         
     </Grid>
 

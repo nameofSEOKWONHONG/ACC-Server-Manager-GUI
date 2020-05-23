@@ -5,18 +5,26 @@ using System.Text;
 
 using JDotnetExtension;
 using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace ACCServerApp.Shard.Models
 {
     public partial class RaceSession
     {
+        [JsonProperty("hourOfDay")]
         public int HourOfDay { get; set; } = 6;
-        public int DayOfWeekend { get; set; } = 2;
-        public int TimeMultiplier { get; set; } = 1;
-        public string SessionType { get; set; }
-        public int SessionDurationMinutes { get; set; } = 10;
 
- 
+        [JsonProperty("dayOfWeekend")]
+        public int DayOfWeekend { get; set; } = 2;
+
+        [JsonProperty("timeMultiplier")]
+        public int TimeMultiplier { get; set; } = 1;
+
+        [JsonProperty("sessionType")]
+        public string SessionType { get; set; }
+
+        [JsonProperty("sessionDurationMinutes")]
+        public int SessionDurationMinutes { get; set; } = 10;
 
         public class Validator : AbstractValidator<RaceSession>
         {

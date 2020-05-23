@@ -41,28 +41,29 @@ namespace ACCServerApp.Shard
             var savePath = Path.Combine("./containers/" + _config.Settings.ServerName);
 
             var configurationFilePath = dirInfo.FullName + "/cfg/configuration.json";
+            if (!Directory.Exists(dirInfo.FullName + "/cfg"))
+            {
+                Directory.CreateDirectory(dirInfo.FullName + "/cfg");
+            }
             if (File.Exists(configurationFilePath))
             {
-                File.Delete(configurationFilePath);
-                
+                File.Delete(configurationFilePath);                
             }
-            File.WriteAllText(configurationFilePath, configuration, System.Text.Encoding.UTF8);
+            File.WriteAllText(configurationFilePath, configuration, Encoding.Unicode);
 
             var eventFilePath = dirInfo.FullName + "/cfg/event.json";
             if (File.Exists(eventFilePath))
             {
-                File.Delete(eventFilePath);
-                
+                File.Delete(eventFilePath);                
             }
-            File.WriteAllText(eventFilePath, @event, System.Text.Encoding.UTF8);
+            File.WriteAllText(eventFilePath, @event, System.Text.Encoding.Unicode);
 
             var settingsFilePath = dirInfo.FullName + "/cfg/settings.json";
             if (File.Exists(settingsFilePath))
             {
                 File.Delete(settingsFilePath);
-                
             }
-            File.WriteAllText(settingsFilePath, settings, System.Text.Encoding.UTF8);
+            File.WriteAllText(settingsFilePath, settings, Encoding.Unicode);
         }
 
         public ACCServerConfig ConfigLoad()

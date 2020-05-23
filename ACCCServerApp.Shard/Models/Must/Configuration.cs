@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,9 +8,20 @@ namespace ACCServerApp.Shard.Models
 {
     public class Configuration
     {
+        [JsonProperty("udpPort")]
         public int UDPPort { get; set; } = 9231; //default
+
+        [JsonProperty("tcpPort")]
         public int TCPProt { get; set; } = 9232; //default
+
+        [JsonProperty("maxConnections")]
         public int MaxConnection { get; set; } = 85; //default
+
+        [JsonProperty("registerToLobby")]
+        public int RegisterToLobby { get; set; } = 1;
+
+
+        [JsonProperty("configVersion")]
         public int ConfigVersion { get; set; } = 1; //default
 
         public class Validator : AbstractValidator<Configuration>
