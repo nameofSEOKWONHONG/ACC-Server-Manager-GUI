@@ -11,34 +11,33 @@ namespace ACCServerApp.Shard
 {
     public class ACCServerFileManager
     {
-        private readonly ACCServerConfig _config;
         private readonly Dictionary<string, string> _keyValues = new Dictionary<string, string>()
         {
-            {"Configuration", "cfg/configuration.json" },
-            {"Event", "cfg/event.json" },
-            {"Settings", "cfg/settings.json" },
-            {"AssistRules", "cfg/assistRules.json" }
+            {"Configuration", "configuration.json" },
+            {"Event", "event.json" },
+            {"Settings", "settings.json" },
+            {"AssistRules", "assistRules.json" }
         };
 
-        public ACCServerFileManager(ACCServerConfig config)
+        public ACCServerFileManager()
         {
-            this._config = config;
         }
 
         #region [Save & Load]
-        public void ConfigSave(DirectoryInfo dirInfo)
+        public void ConfigSave(ACCServerConfig config, DirectoryInfo dirInfo)
         {
-            if (_config.Configuration.jIsNull()) throw new Exception("configuration is null");
-            if (_config.Event.jIsNull()) throw new Exception("event is null");
-            if (_config.Settings.jIsNull()) throw new Exception("settings is null");
+            if (config.jIsNull()) throw new Exception("config is null");
+            if (config.Configuration.jIsNull()) throw new Exception("configuration is null");
+            if (config.Event.jIsNull()) throw new Exception("event is null");
+            if (config.Settings.jIsNull()) throw new Exception("settings is null");
 
             JsonSerializerSettings jsSettings = new JsonSerializerSettings();
             jsSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            var configuration = JsonConvert.SerializeObject(_config.Configuration, Formatting.Indented, jsSettings);
-            var @event = JsonConvert.SerializeObject(_config.Event, Formatting.Indented, jsSettings);
-            var settings = JsonConvert.SerializeObject(_config.Settings, Formatting.Indented, jsSettings);
+            var configuration = JsonConvert.SerializeObject(config.Configuration, Formatting.Indented, jsSettings);
+            var @event = JsonConvert.SerializeObject(config.Event, Formatting.Indented, jsSettings);
+            var settings = JsonConvert.SerializeObject(config.Settings, Formatting.Indented, jsSettings);
 
-            var savePath = Path.Combine("./containers/" + _config.Settings.ServerName);
+            var savePath = Path.Combine("./containers/" + config.Settings.ServerName);
 
             var configurationFilePath = dirInfo.FullName + "/cfg/configuration.json";
             if (!Directory.Exists(dirInfo.FullName + "/cfg"))
@@ -66,14 +65,14 @@ namespace ACCServerApp.Shard
             File.WriteAllText(settingsFilePath, settings, Encoding.Unicode);
         }
 
-        public ACCServerConfig ConfigLoad()
+        public ACCServerConfig ConfigLoad(string configPath)
         {
             var accServerConfig = new ACCServerConfig();
 
-            var configurationJson = File.ReadAllText(Path.Combine("./containers/" + this._config.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(_config.Configuration)).First().Value));
-            var eventJson = File.ReadAllText(Path.Combine("./containers/" + this._config.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(_config.Event)).First().Value));
-            var settingsJson = File.ReadAllText(Path.Combine("./containers/" + this._config.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(_config.Settings)).First().Value));
-            var assisRulesJson = File.ReadAllText(Path.Combine("./containers/" + this._config.Settings.ServerName, _keyValues.Where(m => m.Key == nameof(_config.AssistRules)).First().Value));
+            var configurationJson = File.ReadAllText(Path.Combine(configPath, _keyValues.Where(m => m.Key == nameof(accServerConfig.Configuration)).First().Value));
+            var eventJson = File.ReadAllText(Path.Combine(configPath, _keyValues.Where(m => m.Key == nameof(accServerConfig.Event)).First().Value));
+            var settingsJson = File.ReadAllText(Path.Combine(configPath, _keyValues.Where(m => m.Key == nameof(accServerConfig.Settings)).First().Value));
+            //var assisRulesJson = File.ReadAllText(Path.Combine(configPath, _keyValues.Where(m => m.Key == nameof(_config.AssistRules)).First().Value));
 
             if (accServerConfig.Configuration == null)
             {
@@ -90,10 +89,10 @@ namespace ACCServerApp.Shard
                 accServerConfig.Settings = JsonConvert.DeserializeObject<Settings>(settingsJson);
             }
 
-            if (accServerConfig.AssistRules.jIsNotNull())
-            {
-                accServerConfig.AssistRules = JsonConvert.DeserializeObject<AssistRules>(assisRulesJson);
-            }
+            //if (accServerConfig.AssistRules.jIsNotNull())
+            //{
+            //    accServerConfig.AssistRules = JsonConvert.DeserializeObject<AssistRules>(assisRulesJson);
+            //}
 
             return accServerConfig;
         }

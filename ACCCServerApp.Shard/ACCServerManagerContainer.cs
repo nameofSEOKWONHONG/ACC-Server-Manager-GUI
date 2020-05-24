@@ -39,8 +39,8 @@ namespace ACCServerApp.Shard
 
             DirectoryInfo driInfo = new DirectoryInfo(this.ContainerFilePath + $"/{acServerConfig.Settings.ServerName}");
 
-            ACCServerFileManager accFileManager = new ACCServerFileManager(acServerConfig);
-            accFileManager.ConfigSave(driInfo);
+            ACCServerFileManager accFileManager = new ACCServerFileManager();
+            accFileManager.ConfigSave(acServerConfig, driInfo);
 
             var serverResult = serverManager.Start();
             if(serverResult.HasError)

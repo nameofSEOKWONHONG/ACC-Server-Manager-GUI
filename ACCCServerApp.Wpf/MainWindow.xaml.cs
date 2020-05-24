@@ -6,6 +6,7 @@ using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,15 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
+#if __WINDOWS__
+#endif
 
 namespace ACCServerApp.Wpf
 {
@@ -48,7 +53,20 @@ namespace ACCServerApp.Wpf
 
         private void LoadClickEvent(object sender, RoutedEventArgs e)
         {
-
+#if __WINDOWS__
+            //var locate = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+            using FolderBrowserDialog dlg = new System.Windows.Forms.FolderBrowserDialog();
+            dlg.SelectedPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "containers/");
+            var result = dlg.ShowDialog();
+            if(result == System.Windows.Forms.DialogResult.OK)
+            {
+                var path = dlg.SelectedPath;
+                System.Windows.Forms.MessageBox.Show(path);
+                ACCServerFileManager accFileManager = new ACCServerFileManager();
+                var config = accFileManager.ConfigLoad(path);
+                
+            }
+#endif
         }
 
         private void AdminCommandClick(object sender, RoutedEventArgs e)
