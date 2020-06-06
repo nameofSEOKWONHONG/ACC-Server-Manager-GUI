@@ -37,7 +37,18 @@ namespace ACCServerApp.Wpf.Pages
 
         public RaceTrack SelectedTrack { get; set; } = ACCServerDatum.TrackList.ToList()[0];
 
-        public Event EventItem { get; set; } = new Event();
+        private Event _event = null;
+        public Event EventItem { get { return _event == null ? new Event() : _event; }
+            set {
+                _event = value;
+                if(_event.jIsNotNull())
+                {
+                    var track = ACCServerDatum.TrackList.Where(m => m.Value == _event.Tracks).FirstOrDefault();
+                    this.SelectedTrack = track;
+                }
+                OnPropertyChanged();
+            }
+        }
 
         public ICommand TrackDropDownMenuItemCommand { get; set; }
 

@@ -29,7 +29,7 @@ namespace ACCServerApp.Wpf.Pages
 
         private readonly IDialogCoordinator _dialogCoordinator;
 
-        public List<RaceSession> RaceSessions { get; set; } = new List<RaceSession>(3)
+        private List<RaceSession> _raceSessions = new List<RaceSession>(3)
         {
             new RaceSession()
             {
@@ -62,6 +62,21 @@ namespace ACCServerApp.Wpf.Pages
                 TimeMultiplier = 1,
             }
         };
+
+        public List<RaceSession> RaceSessions { get { return _raceSessions; } 
+            set
+            {
+                if(value.jIsNotNull())
+                {
+                    value.ForEach(item =>
+                    {
+                        item.LanguageResource = this.LanguageResource;
+                    });
+                }
+                _raceSessions = value;
+                OnPropertyChanged();
+            } 
+        }
 
         public ICommand RaceSessionSaveCommand { get; set; }
 

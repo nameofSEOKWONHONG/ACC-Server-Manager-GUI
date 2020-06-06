@@ -12,7 +12,7 @@ namespace ACCServerApp.Shard.Models
         public int UDPPort { get; set; } = 9231; //default
 
         [JsonProperty("tcpPort")]
-        public int TCPProt { get; set; } = 9232; //default
+        public int TCPPort { get; set; } = 9232; //default
 
         [JsonProperty("maxConnections")]
         public int MaxConnection { get; set; } = 85; //default
@@ -29,7 +29,7 @@ namespace ACCServerApp.Shard.Models
             public Validator()
             {
                 RuleFor(m => m.UDPPort).GreaterThan(0).NotEqual(80).NotEqual(8080);
-                RuleFor(m => m.TCPProt).GreaterThan(0).NotEqual(80).NotEqual(8080);
+                RuleFor(m => m.TCPPort).GreaterThan(0).NotEqual(80).NotEqual(8080);
                 RuleFor(m => m.MaxConnection).GreaterThan(0).LessThan(100);
             }
         }

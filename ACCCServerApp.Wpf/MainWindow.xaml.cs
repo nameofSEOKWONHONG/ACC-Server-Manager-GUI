@@ -64,7 +64,18 @@ namespace ACCServerApp.Wpf
                 System.Windows.Forms.MessageBox.Show(path);
                 ACCServerFileManager accFileManager = new ACCServerFileManager();
                 var config = accFileManager.ConfigLoad(path);
-                
+
+                var configurationViewModel = ViewModelContainer.Instance.GetInstance<ACConfigureViewModel>();
+                configurationViewModel.Configuration = config.Configuration;
+
+                var eventViewModel = ViewModelContainer.Instance.GetInstance<ACEventViewModel>();
+                eventViewModel.EventItem = config.Event;
+
+                var sessionViewModel = ViewModelContainer.Instance.GetInstance<ACSessionViewModel>();
+                sessionViewModel.RaceSessions = config.Event.Sessions;
+
+                var settingsViewModel = ViewModelContainer.Instance.GetInstance<ACSettingsViewModel>();
+                settingsViewModel.Settings = config.Settings;
             }
 #endif
         }

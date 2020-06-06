@@ -50,12 +50,12 @@
                     Margin="4 2"
                     Header="{Binding GroupHeader}">
                             <StackPanel VerticalAlignment="Center">
-                                <mah:ToggleSwitch IsChecked="{Binding UseYN}"
+                                <!--<mah:ToggleSwitch IsChecked="{Binding UseYN}"
                                       Style="{StaticResource MahApps.Styles.ToggleSwitch.Win10}"
                                       OnLabel="Y"
                                       OffLabel="N"
                                       HorizontalAlignment="Left"
-                                      Header="USE YN"/>
+                                      Header="USE YN"/>-->
                                 <TextBox Margin="{StaticResource ControlMargin}"
                                      HorizontalContentAlignment="Stretch"
                                      Text="{Binding HourOfDay}"
@@ -103,14 +103,6 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-        </StackPanel>        
-        <StackPanel Grid.Row="1">
-            <Button Width="100"
-                    Margin="{StaticResource ControlMargin}"
-                    Content="Save"
-                    IsEnabled="True"
-                    Style="{DynamicResource MahApps.Styles.Button.Square}" 
-                    Command="{Binding RaceSessionSaveCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

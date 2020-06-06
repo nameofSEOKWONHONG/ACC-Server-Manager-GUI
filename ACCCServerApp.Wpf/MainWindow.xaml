@@ -34,9 +34,9 @@
                                   Kind="SolidSave" />
                 <Button.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="Save" Command="{Binding ConfigSaveCommand}"/>
+                        <!--<MenuItem Header="Save" Command="{Binding ConfigSaveCommand}"/>-->
                         <!--<MenuItem Header="Load" Command="{Binding ConfigLoadCommand}"/>-->
-                        <MenuItem Header="Load" Click="LoadClickEvent"></MenuItem>
+                        <MenuItem Header="CFG Load" Click="LoadClickEvent"></MenuItem>
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
