@@ -60,7 +60,7 @@
             <TabItem Header="{Binding LanguageResource.MAIN}">
                 <Grid>
                     <Grid Grid.Row="0">
-                        <pages:ACMainTop></pages:ACMainTop>
+                        <pages:ACMain></pages:ACMain>
                     </Grid>
                 </Grid>
             </TabItem>

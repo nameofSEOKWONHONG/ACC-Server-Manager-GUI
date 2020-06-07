@@ -65,14 +65,14 @@ namespace ACCServerApp.Wpf.Pages
                     {
                         this.SelectedTrack = (RaceTrack)x;
                         this.EventItem.Tracks = this.SelectedTrack.Value;
-                        ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>().SelectedTrack = this.SelectedTrack;
+                        ViewModelContainer.Instance.GetInstance<ACMainViewModel>().SelectedTrack = this.SelectedTrack;
                     }
                 }
             );
             System.Timers.Timer timer = new System.Timers.Timer(100);
             timer.Elapsed += (s, e) =>
             {
-                ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>().SelectedTrack = this.SelectedTrack;
+                ViewModelContainer.Instance.GetInstance<ACMainViewModel>().SelectedTrack = this.SelectedTrack;
             };
             timer.Start();
         }

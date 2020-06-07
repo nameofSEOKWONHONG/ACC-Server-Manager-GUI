@@ -14,7 +14,7 @@ using System.Windows.Input;
 
 namespace ACCServerApp.Wpf.Pages
 {
-    public class ACMainTopViewModel : ViewModelBase, IDataErrorInfo, IDisposable
+    public class ACMainViewModel : ViewModelBase, IDataErrorInfo, IDisposable
     {
         public string this[string columnName]
         {
@@ -72,7 +72,7 @@ namespace ACCServerApp.Wpf.Pages
 
         public ICommand ServerStartStopCommand { get; set; }
 
-        public ACMainTopViewModel(IDialogCoordinator dialogCoordinator)
+        public ACMainViewModel(IDialogCoordinator dialogCoordinator)
         {
             this._dialogCoordinator = dialogCoordinator;           
 

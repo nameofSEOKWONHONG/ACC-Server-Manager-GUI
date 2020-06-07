@@ -1,6 +1,6 @@
-﻿using MahApps.Metro.Controls.Dialogs;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace ACCServerApp.Wpf.Pages
 {
     /// <summary>
-    /// ACMainBottom.xaml에 대한 상호 작용 논리
+    /// ACMainTop.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class ACMainBottom : UserControl
+    public partial class ACMain : UserControl
     {
-        private ACMainBottomViewModel _viewModel;
-        public ACMainBottom()
+        ACMainViewModel _viewModel;
+        public ACMain()
         {
-            _viewModel = ViewModelContainer.Instance.GetInstance<ACMainBottomViewModel>();
+            _viewModel = ViewModelContainer.Instance.GetInstance<ACMainViewModel>();
+            _viewModel.SelectedEvent = ViewModelContainer.Instance.GetInstance<ACEventViewModel>().EventItem;
             DataContext = _viewModel;
-
             InitializeComponent();
         }
     }

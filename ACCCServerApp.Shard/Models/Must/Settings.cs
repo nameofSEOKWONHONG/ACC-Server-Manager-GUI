@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using LiteDB;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ namespace ACCServerApp.Shard.Models
 {
     public class Settings
     {
+        [BsonId]
         [JsonProperty("serverName")]
         public string ServerName { get; set; } = "ACC_SERVER_DEFAULT";
 

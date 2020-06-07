@@ -91,7 +91,7 @@ namespace ACCServerApp.Wpf.Pages
             Timer timer = new Timer(1000);
             timer.Elapsed += (s, e) =>
             {
-                ViewModelContainer.Instance.GetInstance<ACMainTopViewModel>().SelectedRaceSessions = this.RaceSessions;
+                ViewModelContainer.Instance.GetInstance<ACMainViewModel>().SelectedRaceSessions = this.RaceSessions;
             };
             timer.Start();
         }
