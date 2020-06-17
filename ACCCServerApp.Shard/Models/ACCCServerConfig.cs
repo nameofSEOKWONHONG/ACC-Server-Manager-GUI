@@ -12,6 +12,8 @@ namespace ACCServerApp.Shard.Models
         public Settings Settings { get; set; }
         public AssistRules AssistRules { get; set; }
 
+        public string ServerFilePath { get; set; }
+
         public class Validator : AbstractValidator<ACCServerConfig>
         {
             public Validator()
@@ -19,6 +21,7 @@ namespace ACCServerApp.Shard.Models
                 RuleFor(m => m.Configuration).NotNull();
                 RuleFor(m => m.Event).NotNull();
                 RuleFor(m => m.Settings).NotNull();
+                RuleFor(m => m.ServerFilePath).NotEmpty();
             }
         }
 

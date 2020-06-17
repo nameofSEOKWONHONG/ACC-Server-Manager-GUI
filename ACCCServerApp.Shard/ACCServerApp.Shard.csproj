@@ -20,33 +20,10 @@
     <None Update="Resource\Lang\ko-KR.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="server\accServer.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="server\cfg\assistRules.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="server\cfg\configuration.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="server\cfg\event.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="server\cfg\settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="server\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\JDotnetExtension\lib\lib.csproj" />
   </ItemGroup>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="xcopy &quot;C:\Program Files (x86)\Steam\steamapps\common\Assetto Corsa Competizione\server\*.*&quot; &quot;$(ProjectDir)\server&quot; /K /D /H /Y" />
-  </Target>
 
 </Project>

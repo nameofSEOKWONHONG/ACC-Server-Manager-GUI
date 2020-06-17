@@ -1,11 +1,8 @@
 ﻿using ACCServerApp.Shard.Models;
 using ACCServerApp.Wpf.Core;
-using ACCServerApp.Wpf.Core;
 using MahApps.Metro.Controls.Dialogs;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
 namespace ACCServerApp.Wpf.Pages
 {

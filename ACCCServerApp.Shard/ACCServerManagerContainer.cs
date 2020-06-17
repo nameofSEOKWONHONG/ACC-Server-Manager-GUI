@@ -1,11 +1,9 @@
 ﻿#define __LITE_VERSION__
 
 using ACCServerApp.Shard.Models;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace ACCServerApp.Shard
 {
@@ -14,6 +12,7 @@ namespace ACCServerApp.Shard
     /// </summary>
     public class ACCServerManagerContainer
     {
+        private ACCServerConfig _config;
         public static readonly Dictionary<string, IACCServerManager> Containers = new Dictionary<string, IACCServerManager>();
         public readonly string ServerFilePath = "./server";
         public readonly string ContainerFilePath = "./containers";
@@ -25,6 +24,7 @@ namespace ACCServerApp.Shard
 
         public ACCCServerResult Start(ACCServerConfig acServerConfig)
         {
+            this._config = acServerConfig;
             CreateContainer(acServerConfig.Settings.ServerName);
             if(Containers.Count > 0)
             {
@@ -63,7 +63,7 @@ namespace ACCServerApp.Shard
 
         public void CreateContainer(string serverName)
         {
-            DirectoryInfo d1 = new DirectoryInfo(this.ServerFilePath);
+            DirectoryInfo d1 = new DirectoryInfo(Path.Combine(this._config.ServerFilePath, this.ServerFilePath));
             DirectoryInfo d2 = new DirectoryInfo(this.ContainerFilePath + $"/{serverName}");
             CopyAll(d1, d2);
         }

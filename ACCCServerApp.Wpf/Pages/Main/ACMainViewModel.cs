@@ -6,9 +6,6 @@ using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 
@@ -92,6 +89,18 @@ namespace ACCServerApp.Wpf.Pages
                         config.Configuration = ViewModelContainer.Instance.GetInstance<ACConfigureViewModel>().Configuration;
                         config.Event = ViewModelContainer.Instance.GetInstance<ACEventViewModel>().EventItem;                        
                         config.Settings = ViewModelContainer.Instance.GetInstance<ACSettingsViewModel>().Settings;
+                        config.ServerFilePath = ACCServerApp.Wpf.Properties.Settings.Default["ACCInstallPath"].ToString();
+
+                        ACCServerConfig.Validator validator = new ACCServerConfig.Validator();
+                        var validateResult = validator.Validate(config);
+                        if(!validateResult.IsValid)
+                        {
+                            IsServerStartChecked = false;
+                            OnPropertyChanged(nameof(IsServerStartChecked));
+                            ViewModelContainer.Instance.GetInstance<MainWindowViewModel>().IsChecked = IsServerStartChecked;
+                            await ((MetroWindow)Application.Current.MainWindow).ShowMessageAsync($"Validator Error", validateResult.Errors[0].ErrorMessage).ConfigureAwait(false);
+                            return;
+                        }
 
                         var sResult = serverContainer.Start(config);
 

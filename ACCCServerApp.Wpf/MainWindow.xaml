@@ -44,6 +44,7 @@
     </Controls:MetroWindow.LeftWindowCommands>
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
+            <Button Content="ACC Install Path" Click="ACCInstallPathClick"></Button>
             <Button Content="Admin Cmd" Click="AdminCommandClick"></Button>
             <Button Content="{Binding LanguageResource.LANGUAGE}" >
                 <Button.ContextMenu>

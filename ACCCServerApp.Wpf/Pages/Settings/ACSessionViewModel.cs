@@ -1,14 +1,10 @@
 ﻿using ACCServerApp.Shard.Models;
 using ACCServerApp.Wpf.Core;
 using JDotnetExtension;
-using JetBrains.Annotations;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Timers;
 using System.Windows.Input;
 

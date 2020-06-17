@@ -1,13 +1,7 @@
-﻿using ACCServerApp.Shard;
-using ACCServerApp.Shard.Models;
-using ACCServerApp.Wpf.Core;
-using ACCServerApp.Wpf.Pages;
+﻿using ACCServerApp.Wpf.Core;
 using MahApps.Metro.Controls.Dialogs;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Windows.Input;
 
 namespace ACCServerApp.Wpf

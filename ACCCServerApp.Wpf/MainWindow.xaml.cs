@@ -1,25 +1,12 @@
 ﻿using ACCServerApp.Shard;
 using ACCServerApp.Wpf.Pages;
-using JDotnetExtension;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 #if __WINDOWS__
 #endif
@@ -89,6 +76,20 @@ namespace ACCServerApp.Wpf
             };
             Process.Start(psi);
             e.Handled = true;
+        }
+
+        private async void ACCInstallPathClick(object sender, RoutedEventArgs e)
+        {
+            var result = await this.ShowInputAsync("Install File Setting", "Input Your ACC Install Path?", 
+                new MetroDialogSettings {DefaultText = ACCServerApp.Wpf.Properties.Settings.Default["ACCInstallPath"].ToString()});
+
+            if (result == null) //user pressed cancel
+                return;
+
+            ACCServerApp.Wpf.Properties.Settings.Default["ACCInstallPath"] = result;
+            ACCServerApp.Wpf.Properties.Settings.Default.Save();
+
+            await this.ShowMessageAsync("Install Path is ", ACCServerApp.Wpf.Properties.Settings.Default["ACCInstallPath"].ToString());
         }
 
         private void LanguageClickEvent(object sender, RoutedEventArgs e)
