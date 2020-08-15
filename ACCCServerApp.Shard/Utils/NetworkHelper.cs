@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -9,6 +10,8 @@ namespace ACCServerApp.Shard.Utils
 {
     public class NetworkHelper
     {
+        public static readonly int[] DYNAMIC_UDP_TCP_PORT_RANGE = Enumerable.Range(49152, 65535).ToArray();
+
         public static bool IsTcpPortAvailable(int tcpPort)
         {
             var ipgp = IPGlobalProperties.GetIPGlobalProperties();

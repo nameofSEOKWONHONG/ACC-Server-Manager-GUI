@@ -13,13 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Library", "Externa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lib", "..\JDotnetExtension\lib\lib.csproj", "{A4199264-EC00-46B7-9FFD-C5FA6B6EF8CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACCServerApp.Blazor.Server", "ACCServerApp.Blazor\Server\ACCServerApp.Blazor.Server.csproj", "{3FB8508A-3559-4527-926F-5206ACEFB280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCServerApp.Blazor.Server", "ACCServerApp.Blazor\Server\ACCServerApp.Blazor.Server.csproj", "{3FB8508A-3559-4527-926F-5206ACEFB280}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACCServerApp.Blazor.Client", "ACCServerApp.Blazor\Client\ACCServerApp.Blazor.Client.csproj", "{E6C8603B-C22F-42C7-B6B2-5BA23073B874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCServerApp.Blazor.Client", "ACCServerApp.Blazor\Client\ACCServerApp.Blazor.Client.csproj", "{E6C8603B-C22F-42C7-B6B2-5BA23073B874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACCServerApp.Blazor.Shared", "ACCServerApp.Blazor\Shared\ACCServerApp.Blazor.Shared.csproj", "{AF611182-447E-4039-9498-DB8745A48B50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCServerApp.Blazor.Shared", "ACCServerApp.Blazor\Shared\ACCServerApp.Blazor.Shared.csproj", "{AF611182-447E-4039-9498-DB8745A48B50}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ACCServerApp.Blazor", "ACCServerApp.Blazor", "{761F2701-2FB3-4061-9EEF-69004F659630}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{46C61B30-1CF6-4EB2-915D-7207FBBE1C20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryTest", "LibraryTest\LibraryTest.csproj", "{010AD6D5-BB98-4D50-B3A9-3CD8CB984951}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,10 @@ Global
 		{AF611182-447E-4039-9498-DB8745A48B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF611182-447E-4039-9498-DB8745A48B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF611182-447E-4039-9498-DB8745A48B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{010AD6D5-BB98-4D50-B3A9-3CD8CB984951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{010AD6D5-BB98-4D50-B3A9-3CD8CB984951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{010AD6D5-BB98-4D50-B3A9-3CD8CB984951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{010AD6D5-BB98-4D50-B3A9-3CD8CB984951}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{3FB8508A-3559-4527-926F-5206ACEFB280} = {761F2701-2FB3-4061-9EEF-69004F659630}
 		{E6C8603B-C22F-42C7-B6B2-5BA23073B874} = {761F2701-2FB3-4061-9EEF-69004F659630}
 		{AF611182-447E-4039-9498-DB8745A48B50} = {761F2701-2FB3-4061-9EEF-69004F659630}
+		{010AD6D5-BB98-4D50-B3A9-3CD8CB984951} = {46C61B30-1CF6-4EB2-915D-7207FBBE1C20}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABC4308E-F721-47D1-95D9-E54ED895F198}

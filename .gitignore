@@ -353,3 +353,5 @@ MigrationBackup/
 /ACCCServerApp.Shard/server/ServerAdminHandbook_v6a.pdf
 /ACCCServerApp.Shard/server/log.txt
 /ACCCServerApp.Wpf/Resource/Image/Tracks/계약서.xps
+/LibraryTest/temp.db
+/LibraryTest/temp-log.db

@@ -7,10 +7,9 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="FluentValidation" Version="8.6.1" />
-    <PackageReference Include="LiteDB" Version="5.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4" />
+    <PackageReference Include="HigLabo.Mapper" Version="3.0.0.6" />
+    <PackageReference Include="LiteDB" Version="5.0.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="sqlite" Version="3.13.0" />
   </ItemGroup>
 
   <ItemGroup>
